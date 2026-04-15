@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import { getRealisations, urlFor } from "@/lib/sanity.queries";
+import CtaSection from "@/components/home/CtaSection";
+import RealisationsGallery from "@/components/realisations/RealisationsGallery";
+
+export const metadata: Metadata = {
+  title: "Nos réalisations",
+  description: "Découvrez toutes les réalisations d'Univers Terrasses Bois : terrasses bois, sur pilotis, pergolas en Alpes-Maritimes et Var.",
+};
+
+export const revalidate = 3600;
+
+export default async function RealisationsPage() {
+  const realisations = await getRealisations();
+
+  const items = realisations.map((r) => ({
+    _id: r._id,
+    title: r.title,
+    location: r.location,
+    service: r.service,
+    images: (r.images ?? []).map((img) => ({
+      url: urlFor(img.asset).width(600).height(450).url(),
+      urlFull: urlFor(img.asset).width(1400).height(1050).url(),
+      alt: img.alt ?? r.title,
+    })),
+  }));
+
+  return (
+    <>
+      <div className="bg-beige pt-28 pb-14 text-center">
+        <div className="label-upper text-brun text-[9px] mb-3">Portfolio</div>
+        <h1 className="text-noir-bois text-4xl md:text-5xl">Votre intérieur au grand air</h1>
+        <div className="dore-line mx-auto mt-4" />
+        <p className="text-muted text-sm mt-4 max-w-md mx-auto">
+          Chaque projet est unique. Découvrez nos réalisations en Alpes-Maritimes et dans le Var.
+        </p>
+      </div>
+
+      <section className="bg-creme py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <RealisationsGallery items={items} />
+        </div>
+      </section>
+
+      <CtaSection />
+    </>
+  );
+}

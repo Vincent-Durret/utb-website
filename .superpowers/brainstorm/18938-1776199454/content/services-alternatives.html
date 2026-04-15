@@ -1,0 +1,141 @@
+<h2>Alternatives pour la section Services</h2>
+<p class="subtitle">3 directions pour remplacer les cartes grilles redondantes</p>
+
+<div class="cards">
+
+  <!-- Option A -->
+  <div class="card" data-choice="A" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5f0ea; padding:16px; min-height:260px; font-family:Georgia,serif;">
+
+      <div style="text-align:center; margin-bottom:14px;">
+        <div style="font-size:8px; letter-spacing:3px; color:#7a6a4f; text-transform:uppercase; margin-bottom:6px;">Nos services</div>
+        <div style="font-size:18px; color:#2c2c2c;">Ce que nous créons</div>
+        <div style="width:24px; height:1px; background:#c8a96e; margin:8px auto 0;"></div>
+      </div>
+
+      <!-- Horizontal scrolling tabs -->
+      <div style="display:flex; gap:0; border-bottom:1px solid #e0d4c0; margin-bottom:12px;">
+        <div style="padding:6px 12px; border-bottom:2px solid #c8a96e; color:#2c2c2c; font-size:8px; letter-spacing:1px; white-space:nowrap;">Terrasses</div>
+        <div style="padding:6px 12px; color:#aaa; font-size:8px; letter-spacing:1px; white-space:nowrap;">Sur pilotis</div>
+        <div style="padding:6px 12px; color:#aaa; font-size:8px; letter-spacing:1px; white-space:nowrap;">Pergolas</div>
+        <div style="padding:6px 12px; color:#aaa; font-size:8px; letter-spacing:1px; white-space:nowrap;">Piscines</div>
+      </div>
+
+      <!-- Selected service content — large image + text side by side -->
+      <div style="display:flex; gap:10px; align-items:center;">
+        <div style="flex:1.2; background:linear-gradient(135deg,#c4b49a,#8b7355); border-radius:2px; height:80px;"></div>
+        <div style="flex:1;">
+          <div style="color:#2c2c2c; font-size:11px; margin-bottom:4px;">Terrasses en bois</div>
+          <div style="color:#888; font-size:8px; line-height:1.6; margin-bottom:6px;">Ipé, Cumaru, Teck. Durabilité exceptionnelle, visserie inox.</div>
+          <div style="color:#7a6a4f; font-size:8px; letter-spacing:1px; text-transform:uppercase;">Découvrir →</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Tabs interactifs</h3>
+      <p>Un seul bloc avec onglets (Terrasses / Pilotis / Pergolas…). Au clic, le contenu change avec une animation GSAP. Beaucoup plus compact, pas de répétition visuelle.</p>
+    </div>
+  </div>
+
+  <!-- Option B -->
+  <div class="card" data-choice="B" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5f0ea; padding:16px; min-height:260px; font-family:Georgia,serif;">
+
+      <div style="text-align:center; margin-bottom:14px;">
+        <div style="font-size:8px; letter-spacing:3px; color:#7a6a4f; text-transform:uppercase; margin-bottom:6px;">Nos services</div>
+        <div style="font-size:18px; color:#2c2c2c;">Ce que nous créons</div>
+        <div style="width:24px; height:1px; background:#c8a96e; margin:8px auto 0;"></div>
+      </div>
+
+      <!-- Full-width numbered list with hover expand -->
+      <div style="display:flex; flex-direction:column; gap:0;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid #e0d4c0; background:linear-gradient(to right,#fdf8f0,transparent);">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#c8a96e; font-size:9px; letter-spacing:2px;">01</span>
+            <span style="color:#2c2c2c; font-size:11px;">Terrasses en bois</span>
+          </div>
+          <span style="color:#c8a96e; font-size:14px;">→</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid #e0d4c0;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#c8a96e; font-size:9px; letter-spacing:2px;">02</span>
+            <span style="color:#2c2c2c; font-size:11px;">Terrasses sur pilotis</span>
+          </div>
+          <span style="color:#bbb; font-size:14px;">→</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid #e0d4c0;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#c8a96e; font-size:9px; letter-spacing:2px;">03</span>
+            <span style="color:#2c2c2c; font-size:11px;">Pergolas & abris</span>
+          </div>
+          <span style="color:#bbb; font-size:14px;">→</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid #e0d4c0;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#c8a96e; font-size:9px; letter-spacing:2px;">04</span>
+            <span style="color:#2c2c2c; font-size:11px;">Terrasses piscines</span>
+          </div>
+          <span style="color:#bbb; font-size:14px;">→</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:9px 0;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#c8a96e; font-size:9px; letter-spacing:2px;">05</span>
+            <span style="color:#2c2c2c; font-size:11px;">Aménagements extérieurs</span>
+          </div>
+          <span style="color:#bbb; font-size:14px;">→</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Liste numérotée éditoriale</h3>
+      <p>Style cabinet d'archi — liste typographique avec numéros dorés. Au hover, la ligne s'ouvre pour révéler description + image. Très épuré, très "design".</p>
+    </div>
+  </div>
+
+  <!-- Option C -->
+  <div class="card" data-choice="C" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5f0ea; padding:16px; min-height:260px; font-family:Georgia,serif; overflow:hidden;">
+
+      <div style="text-align:center; margin-bottom:14px;">
+        <div style="font-size:8px; letter-spacing:3px; color:#7a6a4f; text-transform:uppercase; margin-bottom:6px;">Nos services</div>
+        <div style="font-size:18px; color:#2c2c2c;">Ce que nous créons</div>
+        <div style="width:24px; height:1px; background:#c8a96e; margin:8px auto 0;"></div>
+      </div>
+
+      <!-- Mosaic : 1 grande + 2 petites + 1 grande horizontale -->
+      <div style="display:grid; grid-template-columns:1.5fr 1fr; grid-template-rows:70px 50px; gap:4px;">
+        <div style="background:linear-gradient(135deg,#c4b49a,#8b7355); border-radius:2px; grid-row:span 1; position:relative; display:flex; align-items:flex-end; padding:6px 8px;">
+          <div style="background:rgba(0,0,0,0.4); padding:3px 6px; border-radius:1px;">
+            <span style="color:#fff; font-size:7px; letter-spacing:1px;">Terrasses en bois</span>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,#a89878,#7a6040); border-radius:2px; position:relative; display:flex; align-items:flex-end; padding:6px 8px;">
+          <div style="background:rgba(0,0,0,0.35); padding:3px 6px; border-radius:1px;">
+            <span style="color:#fff; font-size:7px; letter-spacing:1px;">Sur pilotis</span>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,#b8a890,#6a5838); border-radius:2px; position:relative; display:flex; align-items:flex-end; padding:6px 8px;">
+          <div style="background:rgba(0,0,0,0.35); padding:3px 6px; border-radius:1px;">
+            <span style="color:#fff; font-size:7px; letter-spacing:1px;">Pergolas</span>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,#988868,#584830); border-radius:2px; position:relative; display:flex; align-items:flex-end; padding:6px 8px;">
+          <div style="background:rgba(0,0,0,0.35); padding:3px 6px; border-radius:1px;">
+            <span style="color:#fff; font-size:7px; letter-spacing:1px;">Piscines</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:4px; background:linear-gradient(to right,#2c2c2c,#4a3a28); border-radius:2px; padding:8px 12px; display:flex; justify-content:space-between; align-items:center;">
+        <span style="color:#c8a96e; font-size:8px; letter-spacing:1px; text-transform:uppercase;">Aménagements & Teck</span>
+        <span style="color:#c8a96e; font-size:11px;">→</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Mosaïque photo</h3>
+      <p>Grille photographique asymétrique, chaque service = une vraie photo. Plus visuel, immersif. Le texte est en overlay sur l'image. Idéal quand on a de belles photos Sanity.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">Clique sur ta préférence ou dis-moi ce qui t'attire.</p>
