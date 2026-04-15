@@ -22,7 +22,6 @@ const SERVICE_LABELS: Record<string, string> = {
 export type RealisationPreview = {
   id: string;
   title: string;
-  slug: string;
   location: string;
   service: string;
   mainImageUrl: string;
@@ -34,7 +33,6 @@ const FALLBACKS: RealisationPreview[] = [
   {
     id: "1",
     title: "Terrasse sur pilotis",
-    slug: "",
     location: "Nice",
     service: "sur-pilotis",
     mainImageUrl: "/images/accueil/1-meilleur-artisant-terrasse-bois-nice-mandelieu-fayence-2048x1366.jpeg",
@@ -43,7 +41,6 @@ const FALLBACKS: RealisationPreview[] = [
   {
     id: "2",
     title: "Terrasse bois Mougins",
-    slug: "",
     location: "Mougins",
     service: "terrasses-bois",
     mainImageUrl: "/images/accueil/2-terrasse_bois_cote_dazur-q81nzb2ayi05arp3jv34us63519my0n4pnc2cuuoac.jpg",
@@ -52,7 +49,6 @@ const FALLBACKS: RealisationPreview[] = [
   {
     id: "3",
     title: "Pergola Sophia Antipolis",
-    slug: "",
     location: "Sophia Antipolis",
     service: "pergolas",
     mainImageUrl: "/images/accueil/2-terrasse_bois_cote_dazur-q81nzb2ayi05arp3jv34us63519my0n4pnc2cuuoac.jpg",
@@ -174,14 +170,12 @@ export default function RealisationsStrip({ realisations }: Props) {
                 <p className="text-creme/60 text-xs mt-1">{active.location}</p>
               )}
             </div>
-            {active.slug && (
-              <Link
-                href={`/realisations`}
-                className="flex-shrink-0 border border-dore/60 text-dore label-upper text-[9px] px-4 py-2.5 hover:bg-dore hover:text-noir-bois transition-colors"
-              >
-                Voir →
-              </Link>
-            )}
+            <Link
+              href="/realisations"
+              className="flex-shrink-0 border border-dore/60 text-dore label-upper text-[9px] px-4 py-2.5 hover:bg-dore hover:text-noir-bois transition-colors"
+            >
+              Voir →
+            </Link>
           </div>
         </div>
 

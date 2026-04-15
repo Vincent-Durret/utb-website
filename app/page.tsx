@@ -18,7 +18,6 @@ export default async function HomePage() {
   const realisations: RealisationPreview[] = raw.slice(0, 5).map((r) => ({
     id: r._id,
     title: r.title,
-    slug: r.slug?.current ?? "",
     location: r.location ?? "",
     service: r.service ?? "",
     mainImageUrl: r.images?.[0]?.asset
