@@ -59,10 +59,11 @@ export default function NosServicesPage() {
       <section className="bg-creme py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {SERVICE_CARDS.map((card) => (
+            {SERVICE_CARDS.map((card, i) => (
               <Link
                 key={card.href}
                 href={card.href}
+                aria-label={`Découvrir nos ${card.title.toLowerCase()}`}
                 className="group block relative aspect-[4/3] bg-beige overflow-hidden"
               >
                 <Image
@@ -70,6 +71,7 @@ export default function NosServicesPage() {
                   alt={card.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={i < 2}
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
