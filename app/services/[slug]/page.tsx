@@ -175,7 +175,7 @@ export default async function ServicePage({
       {/* Intro */}
       <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-6 space-y-4">
-          {service.intro.map((p, i) => (
+          {service.intro.map((p) => (
             <p key={p.slice(0, 40)} className="text-muted text-sm leading-relaxed">
               {p}
             </p>
