@@ -162,6 +162,7 @@ export default async function ServicePage({
           alt={service.h1}
           fill
           priority
+          sizes="100vw"
           className="object-cover opacity-60"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
@@ -175,7 +176,7 @@ export default async function ServicePage({
       <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-6 space-y-4">
           {service.intro.map((p, i) => (
-            <p key={i} className="text-muted text-sm leading-relaxed">
+            <p key={p.slice(0, 40)} className="text-muted text-sm leading-relaxed">
               {p}
             </p>
           ))}
@@ -219,6 +220,7 @@ export default async function ServicePage({
                   src={img.src}
                   alt={img.alt}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
