@@ -16,18 +16,18 @@ const SERVICE_CARDS = [
     img: "/images/nos-services/1-terrasse_bois_cote_dazur-q81nzb2axmfiyd11dxth8estlbhlpp9536acmahdi6.jpg",
   },
   {
-    title: "Terrasses sur pilotis",
-    href: "/services/terrasses-sur-pilotis",
+    title: "Piscines et jardins",
+    href: "/services/terrasses-piscines-jardins",
     img: "/images/nos-services/2-constructeur-contour-piscine-terrasse-bois-mougin-nice-valbonne-q81n7ktpbkh0gh",
   },
   {
-    title: "Piscines & jardins",
-    href: "/services/terrasses-piscines-jardins",
+    title: "Abris de voiture",
+    href: "/services/abris-de-voiture",
     img: "/images/nos-services/3-abri_voiture_bois-Nice-AntibeCannes-1-q81o6wlc6etysvzq0q1wvzrygg1exmf14s4n9t7t",
   },
   {
-    title: "Pergolas & abris",
-    href: "/services/pergolas",
+    title: "Terrasses sur pilotis",
+    href: "/services/terrasses-sur-pilotis",
     img: "/images/nos-services/4-entreprise-specialiste-terrasse-bois-sur-pilotis-frejus-grasse-mandelieu-q81o4",
   },
   {
@@ -36,8 +36,8 @@ const SERVICE_CARDS = [
     img: "/images/nos-services/5-realisation-cache-pot-bois-sur-mesure-entrprise-valbonne-Nice-Mougin-q81o6bww0",
   },
   {
-    title: "Toiture en teck",
-    href: "/services/toiture-en-teck",
+    title: "Pergolas",
+    href: "/services/pergolas",
     img: "/images/nos-services/6-constructeur-entreprise-pergolas-bois-alpes-maritimes-var-q81o7bmr7rejyndvkwjx",
   },
 ];

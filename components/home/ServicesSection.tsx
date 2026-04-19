@@ -23,7 +23,7 @@ const SERVICES = [
   },
   {
     num: "03",
-    title: "Pergolas & abris voitures",
+    title: "Pergolas",
     desc: "Abris voitures, pergolas, jardinières, ponts japonais, abris de jardin… Bois massif, conception sur mesure, finitions soignées.",
     href: "/services/pergolas",
   },
@@ -41,9 +41,9 @@ const SERVICES = [
   },
   {
     num: "06",
-    title: "Toiture en teck",
-    desc: "Le teck, bois noble par excellence. Résistant, naturellement huilé, il offre une longévité remarquable pour vos toitures et bardages extérieurs.",
-    href: "/services/toiture-en-teck",
+    title: "Abris de voiture",
+    desc: "Pour prendre soin de votre véhicule, optez pour un carport en bois. Design ou classique, ce matériau écologique se fond avec l'environnement. Structure en bois de Douglas.",
+    href: "/services/abris-de-voiture",
   },
 ];
 

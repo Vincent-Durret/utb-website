@@ -15,7 +15,7 @@ const SERVICES = [
   { label: "Terrasses piscines & jardins", href: "/services/terrasses-piscines-jardins" },
   { label: "Pergolas", href: "/services/pergolas" },
   { label: "Aménagements extérieurs", href: "/services/amenagements-exterieurs" },
-  { label: "Toiture en teck", href: "/services/toiture-en-teck" },
+  { label: "Abris de voiture", href: "/services/abris-de-voiture" },
 ];
 
 export default function Nav() {

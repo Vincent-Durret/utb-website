@@ -24,7 +24,7 @@ export default function Footer() {
                 { label: "Pergolas", href: "/services/pergolas" },
                 { label: "Aménagements extérieurs", href: "/services/amenagements-exterieurs" },
                 { label: "Terrasses piscines", href: "/services/terrasses-piscines-jardins" },
-                { label: "Toiture en teck", href: "/services/toiture-en-teck" },
+                { label: "Abris de voiture", href: "/services/abris-de-voiture" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-xs text-white/60 hover:text-dore transition-colors">

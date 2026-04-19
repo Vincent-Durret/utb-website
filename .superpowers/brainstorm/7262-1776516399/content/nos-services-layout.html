@@ -1,0 +1,177 @@
+<style>
+  :root {
+    --creme: #f5f0ea;
+    --beige: #ede8e0;
+    --dore: #c8a96e;
+    --brun: #7a6a4f;
+    --noir: #2c2c2c;
+    --muted: #6b6359;
+  }
+  body { font-family: 'Georgia', serif; background: var(--creme); }
+  h2 { color: var(--noir); font-size: 1.4rem; margin-bottom: 0.3rem; }
+  .subtitle { color: var(--muted); font-family: sans-serif; font-size: 0.85rem; margin-bottom: 1.5rem; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 700px) { .split { grid-template-columns: 1fr; } }
+
+  .mockup {
+    background: white;
+    border: 2px solid #e0d8cc;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .mockup.selected { border-color: var(--dore); box-shadow: 0 0 0 3px rgba(200,169,110,0.25); }
+  .mockup-header {
+    background: var(--dore);
+    color: white;
+    font-family: sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+  }
+  .mockup-body { padding: 0; }
+  .mockup-desc { padding: 10px 12px; border-top: 1px solid var(--beige); background: var(--creme); }
+  .mockup-desc h3 { font-size: 0.8rem; color: var(--noir); margin: 0 0 4px; }
+  .mockup-desc p { font-size: 0.65rem; color: var(--muted); font-family: sans-serif; margin: 0; line-height: 1.4; }
+
+  /* Option A — Grille de cartes photo */
+  .na-hero { background: var(--beige); padding: 14px 12px; text-align: center; border-bottom: 2px solid var(--dore); }
+  .na-hero-label { font-size: 0.5rem; font-family: sans-serif; color: var(--brun); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px; }
+  .na-hero h4 { font-size: 0.95rem; color: var(--noir); margin: 0 0 2px; }
+  .na-hero p { font-size: 0.6rem; color: var(--muted); font-family: sans-serif; margin: 0; }
+  .na-line { width: 24px; height: 2px; background: var(--dore); margin: 5px auto 0; }
+  .na-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--creme); padding: 8px; }
+  .na-card { background: var(--noir); position: relative; overflow: hidden; cursor: pointer; }
+  .na-card-img { height: 42px; }
+  .na-card:nth-child(1) .na-card-img { background: linear-gradient(135deg, #4a3f2f, #2c2416); }
+  .na-card:nth-child(2) .na-card-img { background: linear-gradient(135deg, #7a6a4f, #4a3f2f); }
+  .na-card:nth-child(3) .na-card-img { background: linear-gradient(135deg, #3d4a2f, #2c3616); }
+  .na-card:nth-child(4) .na-card-img { background: linear-gradient(135deg, #2f3a4a, #162c36); }
+  .na-card:nth-child(5) .na-card-img { background: linear-gradient(135deg, #4a2f3a, #361626); }
+  .na-card:nth-child(6) .na-card-img { background: linear-gradient(135deg, #c8a96e, #7a6a4f); }
+  .na-card-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 4px 5px; position: absolute; bottom: 0; left: 0; right: 0; }
+  .na-card-title { font-size: 0.45rem; color: white; font-family: sans-serif; font-weight: 600; display: block; }
+  .na-card-link { font-size: 0.4rem; color: var(--dore); font-family: sans-serif; }
+
+  /* Option B — Liste éditoriale numérotée */
+  .nb-hero { background: var(--beige); padding: 14px 12px; text-align: center; border-bottom: 2px solid var(--dore); }
+  .nb-hero-label { font-size: 0.5rem; font-family: sans-serif; color: var(--brun); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px; }
+  .nb-hero h4 { font-size: 0.95rem; color: var(--noir); margin: 0 0 2px; }
+  .nb-hero p { font-size: 0.6rem; color: var(--muted); font-family: sans-serif; margin: 0; }
+  .nb-line { width: 24px; height: 2px; background: var(--dore); margin: 5px auto 0; }
+  .nb-list { background: white; }
+  .nb-item { display: grid; grid-template-columns: 28px 1fr 40px; align-items: center; gap: 6px; padding: 8px 10px; border-bottom: 1px solid var(--beige); }
+  .nb-item:last-child { border-bottom: none; }
+  .nb-num { font-size: 0.85rem; color: var(--dore); font-weight: 700; font-family: sans-serif; line-height: 1; }
+  .nb-content h5 { font-size: 0.65rem; color: var(--noir); margin: 0 0 1px; }
+  .nb-content p { font-size: 0.5rem; color: var(--muted); font-family: sans-serif; margin: 0; }
+  .nb-img { height: 28px; background: linear-gradient(135deg, #4a3f2f, #2c2416); }
+  .nb-item:nth-child(2) .nb-img { background: linear-gradient(135deg, #7a6a4f, #4a3f2f); }
+  .nb-item:nth-child(3) .nb-img { background: linear-gradient(135deg, #3d4a2f, #2c3616); }
+  .nb-item:nth-child(4) .nb-img { background: linear-gradient(135deg, #2f3a4a, #162c36); }
+  .nb-item:nth-child(5) .nb-img { background: linear-gradient(135deg, #4a2f3a, #361626); }
+  .nb-item:nth-child(6) .nb-img { background: linear-gradient(135deg, #c8a96e, #7a6a4f); }
+</style>
+
+<h2>Page /nos-services — Vue d'ensemble</h2>
+<p class="subtitle">Comment présenter les 6 services sur la page overview ?</p>
+
+<div class="split">
+
+  <!-- Option A — Grille photo -->
+  <div class="mockup" data-choice="a" onclick="toggleSelect(this)">
+    <div class="mockup-header">A — Grille de cartes photo</div>
+    <div class="mockup-body">
+      <div class="na-hero">
+        <div class="na-hero-label">Ce que nous faisons</div>
+        <h4>Nos services</h4>
+        <p>Terrasses, pergolas, aménagements — sur mesure en Côte d'Azur</p>
+        <div class="na-line"></div>
+      </div>
+      <div class="na-grid">
+        <div class="na-card">
+          <div class="na-card-img"></div>
+          <div class="na-card-overlay"><span class="na-card-title">Terrasses en bois</span><span class="na-card-link">Découvrir →</span></div>
+        </div>
+        <div class="na-card">
+          <div class="na-card-img"></div>
+          <div class="na-card-overlay"><span class="na-card-title">Terrasses sur pilotis</span><span class="na-card-link">Découvrir →</span></div>
+        </div>
+        <div class="na-card">
+          <div class="na-card-img"></div>
+          <div class="na-card-overlay"><span class="na-card-title">Piscines & jardins</span><span class="na-card-link">Découvrir →</span></div>
+        </div>
+        <div class="na-card">
+          <div class="na-card-img"></div>
+          <div class="na-card-overlay"><span class="na-card-title">Pergolas</span><span class="na-card-link">Découvrir →</span></div>
+        </div>
+        <div class="na-card">
+          <div class="na-card-img"></div>
+          <div class="na-card-overlay"><span class="na-card-title">Aménagements ext.</span><span class="na-card-link">Découvrir →</span></div>
+        </div>
+        <div class="na-card">
+          <div class="na-card-img"></div>
+          <div class="na-card-overlay"><span class="na-card-title">Toiture en teck</span><span class="na-card-link">Découvrir →</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup-desc">
+      <h3>Grille 3×2 avec overlay photo</h3>
+      <p>Chaque service est une carte photo avec overlay dégradé et titre. Clic → page service. Visuel fort, navigation rapide.</p>
+    </div>
+  </div>
+
+  <!-- Option B — Liste éditoriale -->
+  <div class="mockup" data-choice="b" onclick="toggleSelect(this)">
+    <div class="mockup-header">B — Liste éditoriale numérotée</div>
+    <div class="mockup-body">
+      <div class="nb-hero">
+        <div class="nb-hero-label">Ce que nous faisons</div>
+        <h4>Nos services</h4>
+        <p>Terrasses, pergolas, aménagements — sur mesure en Côte d'Azur</p>
+        <div class="nb-line"></div>
+      </div>
+      <div class="nb-list">
+        <div class="nb-item">
+          <div class="nb-num">01</div>
+          <div class="nb-content"><h5>Terrasses en bois</h5><p>Cumaru, Itauba, Ipé — ponçage inclus</p></div>
+          <div class="nb-img"></div>
+        </div>
+        <div class="nb-item">
+          <div class="nb-num">02</div>
+          <div class="nb-content"><h5>Terrasses sur pilotis</h5><p>Terrain en pente, jusqu'à 6m</p></div>
+          <div class="nb-img"></div>
+        </div>
+        <div class="nb-item">
+          <div class="nb-num">03</div>
+          <div class="nb-content"><h5>Piscines & jardins</h5><p>Plages de piscine, bois anti-échardes</p></div>
+          <div class="nb-img"></div>
+        </div>
+        <div class="nb-item">
+          <div class="nb-num">04</div>
+          <div class="nb-content"><h5>Pergolas & abris</h5><p>Structure bois Douglas, sur mesure</p></div>
+          <div class="nb-img"></div>
+        </div>
+        <div class="nb-item">
+          <div class="nb-num">05</div>
+          <div class="nb-content"><h5>Aménagements extérieurs</h5><p>Garde-corps, luminaires, jardinières</p></div>
+          <div class="nb-img"></div>
+        </div>
+        <div class="nb-item">
+          <div class="nb-num">06</div>
+          <div class="nb-content"><h5>Toiture en teck</h5><p>Bois noble, résistant aux intempéries</p></div>
+          <div class="nb-img"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup-desc">
+      <h3>Liste numérotée 01–06 avec vignette</h3>
+      <p>Style éditorial cohérent avec la homepage (ServicesSection). Chaque ligne = numéro + titre + description courte + vignette. Élégant et lisible.</p>
+    </div>
+  </div>
+
+</div>

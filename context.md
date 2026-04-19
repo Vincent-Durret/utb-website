@@ -83,7 +83,7 @@
 - [x] `/services/terrasses-piscines-jardins`
 - [x] `/services/pergolas`
 - [x] `/services/amenagements-exterieurs`
-- [x] `/services/toiture-en-teck`
+- [x] `/services/abris-de-voiture`
 
 ### ✅ Pages SEO villes (12) — template dynamique
 - [x] `/villes/nice`
@@ -100,7 +100,7 @@
 - [x] `/villes/la-gaude`
 
 ### ✅ Sanity — Schémas & Studio
-- [x] Schema `realisation` (title, date, location, service, images, description) — slug supprimé, pas de page détail
+- [x] Schema `realisation` (title, slug, date, location, service, images, description)
 - [x] Schema `actualite` (title, slug, publishedAt, excerpt, coverImage, body)
 - [x] `sanity.config.ts` avec structure personnalisée
 - [x] `lib/sanity.client.ts` + `lib/sanity.queries.ts`
@@ -108,6 +108,7 @@
 
 ### ✅ Pages dynamiques (Sanity)
 - [x] `/realisations` — galerie plein-cadre : overlay dégradé au hover, texte sur image, 1ère carte featured 16:9 sur 2 colonnes, badge service doré, lightbox plein écran au clic (navigation clavier/boutons, multi-images, fermeture Escape/backdrop)
+- [x] `/realisations/[slug]` — page détail réalisation (Sanity)
 - [x] `/actualites-bois` — liste articles
 - [x] `/actualites-bois/[slug]` — article individuel (PortableText)
 

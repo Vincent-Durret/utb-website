@@ -18,9 +18,8 @@ const SERVICES: Record<string, ServiceData> = {
     h1: "Terrasses en bois",
     description: "Construction de terrasses en bois sur mesure en Alpes-Maritimes et Var. Ipé, Cumaru, Teck — essences durables, visserie inox.",
     intro: [
-      "Quel que soit votre projet, le bois est fait pour s'adapter à toutes les situations en vous assurant un confort et une longévité unique.",
-      "À la fois chaleureuse et esthétique, la terrasse en bois apporte du charme et de l'authenticité à votre maison. Pour concevoir la terrasse de vos rêves, nous concevons ensemble votre projet afin de vous conseiller et vous apporter des solutions durables.",
-      "Nous vous apportons les solutions quelle que soit la difficulté et les contraintes de votre terrain. Nous adaptons votre terrasse à la configuration de votre espace et respectons votre environnement. Notre plus : nous ponçons intégralement votre terrasse en fin de chantier, pour une finition parfaite.",
+      "Vous souhaitez une terrasse de qualité, raffinée, élégante et durable ? À la fois chaleureuse et esthétique, la terrasse en bois apporte du charme et de l'authenticité à votre maison. Pour concevoir la terrasse de vos rêves, nous concevons ensemble votre projet afin de vous conseiller et vous apporter des solutions durables. Nous sommes disponibles quand vous l'êtes et à l'écoute de vos désirs.",
+      "Nous vous apportons les solutions quelle que soit la difficulté et les contraintes de votre terrain. Nous adaptons votre terrasse à la configuration de votre espace et nous respectons votre environnement. Notre plus : nous ponçons intégralement votre terrasse en fin de chantier, pour une finition parfaite ! Réalisez vos envies dès maintenant, demandez-nous un devis.",
     ],
     hero: "/images/types_services_terrasses-bois/7-terrasse_bois_cote_dazur-q81nzb2axmfiyd11dxth8estlbhlpp9536acmahdi6.jpg",
     gallery: [
@@ -34,9 +33,8 @@ const SERVICES: Record<string, ServiceData> = {
     h1: "Terrasses bois sur pilotis",
     description: "Spécialiste terrasses bois sur pilotis en Côte d'Azur. Terrain en pente, espace non accessible — nous adaptons votre terrasse.",
     intro: [
-      "Notre région présente une topographie très accidentée. Pour optimiser au maximum l'espace, nous proposons l'aménagement de terrasses bois sur pilotis. Ce procédé est mis en œuvre par l'élévation de plots béton, de poteaux et d'une charpente porteuse.",
-      "À plus d'un mètre du sol (voire 5 ou 6 mètres), la norme impose la mise en place de garde-corps. Pour ne pas occulter la vue, il est possible de mettre en place des panneaux de verre ou de plexiglas et d'allier le bois et l'inox pour une composition design.",
-      "Une terrasse sur pilotis vous permet de profiter d'une place jusqu'alors inexploitée, d'avoir une vue plus dégagée sur votre environnement extérieur, et même de bénéficier d'un espace de rangement étanche sous la terrasse. La structure est réalisée en bois de Douglas.",
+      "Notre région présente une topographie très accidentée. Pour optimiser au maximum l'espace, nous proposons l'aménagement de terrasses bois sur pilotis. Ce procédé est mis en œuvre par l'élévation de plots béton, de poteaux et d'une charpente porteuse. Notre bureau d'études calcule le dimensionnement de la structure de la charpente pour recevoir une charge admissible. À plus d'un mètre du sol (voire 5 ou 6 mètres), la norme impose la mise en place de garde-corps. Pour ne pas occulter la vue, il est possible de mettre en place des panneaux de verre ou de plexiglas et d'allier le bois et l'inox pour une composition design.",
+      "Une terrasse sur pilotis vous permet de profiter d'une place jusqu'alors inexploitée, d'avoir une vue plus dégagée sur votre environnement extérieur. Vous pouvez aussi profiter d'un espace de rangement étanche et même éclairé si vous le souhaitez sous la terrasse sur pilotis. La structure est réalisée en bois de Douglas.",
     ],
     hero: "/images/types_services_terrasses-bois-sur-pilotis/7-terrasse_bois_cote_dazur-q81nzb2axmfiyd11dxth8estlbhlpp9536acmahdi6.jpg",
     gallery: [
@@ -46,13 +44,12 @@ const SERVICES: Record<string, ServiceData> = {
     ],
   },
   "terrasses-piscines-jardins": {
-    title: "Terrasses piscines & jardins",
-    h1: "Terrasses piscines & jardins",
+    title: "Piscines et jardins",
+    h1: "Piscines et jardins",
     description: "Terrasses en bois autour de piscine et aménagement de jardins en bois. Spécialiste Côte d'Azur.",
     intro: [
-      "Pour l'élaboration de votre terrasse de piscine, nous veillons à votre confort mais aussi à votre sécurité. Le bois exotique fait partie de nos matériaux pour la création de votre projet. En plus de donner du cachet à votre maison, il est naturellement imputrescible et dépourvu d'échardes.",
-      "Entre jardin, terrasse et piscine, comment allier l'esthétisme à la fonctionnalité ? Nous concevons votre projet avec vous et vous présentons plusieurs maquettes créatives sur un même espace.",
-      "Si votre piscine fonctionne au chlore, il peut y avoir quelques traces blanchâtres sur le bois qui disparaissent très rapidement. Nos essences exotiques (Cumaru, Ipé) sont spécialement adaptées aux environnements humides.",
+      "Pour l'élaboration de votre terrasse de piscine, nous devons veiller à votre confort mais aussi votre sécurité. Pour cela, le bois présente plusieurs avantages : esthétique, antidérapant naturel, résistant à l'eau, longévité, facile d'entretien. Le bois exotique fait partie de nos matériaux pour la création de votre projet. En plus de donner du cachet à votre maison, il est naturellement imputrescible et dépourvu d'échardes.",
+      "Entre jardin, terrasse et piscine, comment allier l'esthétisme à la fonctionnalité ? Nous concevons votre projet avec vous et nous vous présentons plusieurs maquettes créatives sur un même espace.",
     ],
     hero: "/images/nos-services/1-terrasse_bois_cote_dazur-q81nzb2axmfiyd11dxth8estlbhlpp9536acmahdi6.jpg",
     gallery: [
@@ -63,12 +60,11 @@ const SERVICES: Record<string, ServiceData> = {
   },
   "pergolas": {
     title: "Pergolas",
-    h1: "Pergolas & abris voitures",
-    description: "Construction de pergolas et abris voitures en bois sur mesure. Alpes-Maritimes et Var — devis gratuit en 72h.",
+    h1: "Pergolas",
+    description: "Construction de pergolas en bois sur mesure. Alpes-Maritimes et Var — devis gratuit en 72h.",
     intro: [
-      "Vous pouvez réaliser et concevoir des pergolas quel que soit l'espace et le lieu que vous souhaitez. Nous possédons les compétences adéquates et y apportons toute notre créativité.",
-      "Concevoir et réaliser une pergola à ossature bois sur un espace réduit, arrimée de façon quasi invisible — là aussi, le professionnel est prépondérant. Des études en amont sont effectuées afin de tester la résistance au vent, au soulèvement et autres contraintes.",
-      "Outre leur fonctionnalité, les pergolas amènent un univers cocooning à votre jardin, un coin d'ombre où déjeuner. Nous réalisons également des abris voitures en bois Douglas, résistants et esthétiques.",
+      "Vous pouvez réaliser et concevoir des pergolas quelle que soit l'espace et le lieu que vous souhaitez ! Sachez que nous possédons les compétences adéquates et que de plus nous y apportons notre créativité. Concevoir et réaliser une pergola à ossature bois sur un espace réduit, arrimée de façon quasi invisible — là aussi, le professionnel est prépondérant. Des études en amont sont effectuées afin de tester la résistance au vent, au soulèvement et autres contraintes.",
+      "Outre leur fonctionnalité, les pergolas amènent un univers cocooning à votre jardin, un coin d'ombre où déjeuner par exemple.",
     ],
     hero: "/images/types_services_abris-voitures-pergolas/1-constructeur-entreprise-pergolas-bois-alpes-maritimes-var-q81o7bmr7rejyndvkwjx",
     gallery: [
@@ -82,9 +78,8 @@ const SERVICES: Record<string, ServiceData> = {
     h1: "Aménagements extérieurs",
     description: "Garde-corps, luminaires, jardinières, clôtures — tous vos aménagements extérieurs en bois sur mesure.",
     intro: [
-      "Aménager votre extérieur en bois apporte un aspect naturel et chaleureux. De plus, cela ajoute de la valeur à votre maison.",
-      "Le bois se prête à toutes vos envies et nous savons le travailler : passerelles, douches extérieures, abris de jardin, garde-corps, luminaires, jardinières, ponts japonais… Nous mettrons tout en œuvre pour réaliser vos désirs.",
-      "Nous vous conseillons et vous accompagnons tout au long des travaux, de l'étude à la livraison. Chaque réalisation est conçue sur mesure pour s'intégrer harmonieusement à votre extérieur.",
+      "Aménager votre extérieur en bois amène un aspect naturel et chaleureux. De plus, cela apporte de la plus-value à votre maison.",
+      "Le bois se prête à toutes vos envies et nous savons le travailler : passerelles, douches extérieures, abris de jardin, garde-corps, luminaires, jardinières, etc. Nous mettrons tout en œuvre pour réaliser vos désirs.",
     ],
     hero: "/images/nos-services/5-realisation-cache-pot-bois-sur-mesure-entrprise-valbonne-Nice-Mougin-q81o6bww0",
     gallery: [
@@ -93,20 +88,19 @@ const SERVICES: Record<string, ServiceData> = {
       { src: "/images/nos-services/2-constructeur-contour-piscine-terrasse-bois-mougin-nice-valbonne-q81n7ktpbkh0gh", alt: "Terrasse bois Mougins" },
     ],
   },
-  "toiture-en-teck": {
-    title: "Toiture en teck",
-    h1: "Toiture en teck",
-    description: "Toiture et bardage en teck — bois noble, résistant et naturellement huilé pour vos extérieurs en Côte d'Azur.",
+  "abris-de-voiture": {
+    title: "Abris de voiture",
+    h1: "Abris de voiture",
+    description: "Carport bois sur mesure pour protéger votre voiture ou deux-roues. Structure en Douglas, conception design ou classique — Côte d'Azur.",
     intro: [
-      "Le teck est un bois noble par excellence. Naturellement huilé, il offre une résistance remarquable aux intempéries et une longévité exceptionnelle pour vos toitures et bardages extérieurs.",
-      "Pour prendre soin de votre véhicule ou couvrir votre terrasse, pourquoi ne pas opter pour une structure en teck ? Ce matériau écologique se fond avec l'environnement pour s'adapter à n'importe quel extérieur.",
-      "Nous utilisons uniquement du teck issu de forêts gérées durablement. Nous réalisons la structure en bois de Douglas pour la charpente, dont la résistance et la durabilité ne sont plus à prouver.",
+      "Pour prendre soin de votre véhicule, pourquoi ne pas opter pour un carport en bois ? Votre voiture ou votre deux-roues sera parfaitement à l'abri de toutes intempéries.",
+      "Un abri de voiture design ou classique ? Le réaliser en bois apporte du cachet à votre maison. De plus, ce matériau écologique se fond avec l'environnement pour s'adapter à n'importe quel extérieur. Nous réalisons la structure en bois de Douglas, dont la résistance et la durabilité ne sont plus à prouver.",
     ],
-    hero: "/images/types_services_abris-voitures-pergolas/7-terrasse_bois_cote_dazur-q81nzb2axmfiyd11dxth8estlbhlpp9536acmahdi6.jpg",
+    hero: "/images/nos-services/3-abri_voiture_bois-Nice-AntibeCannes-1-q81o6wlc6etysvzq0q1wvzrygg1exmf14s4n9t7t",
     gallery: [
-      { src: "/images/types_services_abris-voitures-pergolas/1-constructeur-entreprise-pergolas-bois-alpes-maritimes-var-q81o7bmr7rejyndvkwjx", alt: "Toiture teck" },
-      { src: "/images/types_services_abris-voitures-pergolas/2-realisation-cache-pot-bois-sur-mesure-entrprise-valbonne-Nice-Mougin-q81o6bww0", alt: "Bardage bois" },
-      { src: "/images/types_services_abris-voitures-pergolas/5-abri_voiture_bois-Nice-AntibeCannes-1-q81o6wlc6etysvzq0q1wvzrygg1exmf14s4n9t7t", alt: "Abri teck" },
+      { src: "/images/types_services_abris-voitures-pergolas/1-constructeur-entreprise-pergolas-bois-alpes-maritimes-var-q81o7bmr7rejyndvkwjx", alt: "Abri voiture bois" },
+      { src: "/images/types_services_abris-voitures-pergolas/5-abri_voiture_bois-Nice-AntibeCannes-1-q81o6wlc6etysvzq0q1wvzrygg1exmf14s4n9t7t", alt: "Carport bois sur mesure" },
+      { src: "/images/types_services_abris-voitures-pergolas/6-constructeur-contour-piscine-terrasse-bois-mougin-nice-valbonne-q81n7ktpbkh0gh", alt: "Abri Douglas" },
     ],
   },
 };
@@ -115,17 +109,17 @@ const PROCESSUS = [
   {
     num: "01",
     title: "Étude",
-    desc: "Prise de cotes, examen du terrain, mesure des hauteurs, étude de portance et plans.",
+    desc: "Prise de cotes et examen du terrain, mesurage des hauteurs sous fenêtres, prise de photos du lieu, étude de portance, étude pour décaissement éventuel, et étude du terrain, plans.",
   },
   {
     num: "02",
     title: "Mise en place",
-    desc: "Gestion administrative, structure, pose des lames et ponçage intégral de la terrasse.",
+    desc: "De la gestion administrative au décaissement éventuel si besoin, la mise en place de la structure, pose des lames et ponçage intégral de la terrasse avec bandeau de finition si nécessaire.",
   },
   {
     num: "03",
     title: "Livraison",
-    desc: "Devis personnalisé en 72h. Déplacement du lundi au samedi de 8h à 19h.",
+    desc: "Le devis est dit « fourni posé ». Nous fournissons le bois choisi et nous procédons à l'installation. Déplacement du lundi au samedi de 8h à 19h, devis en 72h.",
   },
 ];
 
