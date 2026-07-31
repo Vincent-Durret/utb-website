@@ -22,6 +22,99 @@ export type RealisationItem = {
 
 type Props = { items: RealisationItem[] };
 
+type CardVariant = "large" | "small" | "fill";
+
+type CardProps = {
+  item: RealisationItem;
+  index: number;
+  variant?: CardVariant;
+  onOpen: (index: number) => void;
+};
+
+const VARIANT_CLASS: Record<CardVariant, string> = {
+  large: "aspect-[3/2]",
+  small: "aspect-[4/3]",
+  fill: "aspect-[4/3] md:aspect-auto md:flex-1 md:min-h-0",
+};
+
+function RealisationCard({ item, index, variant = "small", onOpen }: CardProps) {
+  const isLarge = variant === "large";
+
+  return (
+    <button
+      onClick={() => onOpen(index)}
+      className={`group relative overflow-hidden text-left focus-visible:outline-2 focus-visible:outline-dore focus-visible:outline-offset-2 ${VARIANT_CLASS[variant]}`}
+      aria-label={`Voir ${item.title} en plein écran`}
+    >
+      <div className="relative h-full w-full overflow-hidden">
+        {item.images[0] ? (
+          <Image
+            src={item.images[0].url}
+            alt={item.images[0].alt}
+            fill
+            priority={index < 3}
+            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            sizes={
+              isLarge
+                ? "(max-width: 768px) 100vw, 50vw"
+                : "(max-width: 768px) 100vw, 25vw"
+            }
+          />
+        ) : (
+          <div className="w-full h-full bg-beige" />
+        )}
+
+        <div className="absolute inset-0 bg-gradient-to-t from-noir-footer/75 via-noir-footer/20 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+
+        {item.service && (
+          <div className="absolute top-3 left-3">
+            <span className="label-upper text-[9px] text-creme bg-dore/90 px-2 py-1">
+              {SERVICE_LABELS[item.service] ?? item.service}
+            </span>
+          </div>
+        )}
+
+        {item.images.length > 1 && (
+          <div className="absolute top-3 right-3">
+            <span className="label-upper text-[9px] text-creme bg-noir-footer/60 px-2 py-1">
+              {item.images.length} photos
+            </span>
+          </div>
+        )}
+
+        <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+          <h2
+            className={`text-creme font-serif leading-snug ${
+              isLarge ? "text-xl md:text-2xl" : "text-base"
+            }`}
+          >
+            {item.title}
+          </h2>
+          {item.location && (
+            <p className="text-creme/70 text-xs mt-1 flex items-center gap-1">
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true">
+                <path
+                  d="M5 0C2.79 0 1 1.79 1 4c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 5 2.5a1.5 1.5 0 0 1 0 3z"
+                  fill="currentColor"
+                />
+              </svg>
+              {item.location}
+            </p>
+          )}
+        </div>
+      </div>
+    </button>
+  );
+}
+
+function chunkItems<T>(arr: T[], size: number): T[][] {
+  const chunks: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+}
+
 export default function RealisationsGallery({ items }: Props) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const [imgIdx, setImgIdx] = useState(0);
@@ -71,6 +164,11 @@ export default function RealisationsGallery({ items }: Props) {
     };
   }, [openIdx, close, prev, next]);
 
+  const open = useCallback((index: number) => {
+    setOpenIdx(index);
+    setImgIdx(0);
+  }, []);
+
   if (items.length === 0) {
     return (
       <div className="text-center py-20 text-muted">
@@ -79,69 +177,77 @@ export default function RealisationsGallery({ items }: Props) {
     );
   }
 
+  const indexed = items.map((item, index) => ({ item, index }));
+  const groups = chunkItems(indexed, 3);
+
   return (
     <>
-      {/* Galerie */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {items.map((r, i) => (
-          <button
-            key={r._id}
-            onClick={() => { setOpenIdx(i); setImgIdx(0); }}
-            className={`group relative overflow-hidden text-left focus-visible:outline-2 focus-visible:outline-dore focus-visible:outline-offset-2${i === 0 ? " sm:col-span-2 lg:col-span-2" : ""}`}
-            aria-label={`Voir ${r.title} en plein écran`}
-          >
-            <div className={`relative overflow-hidden${i === 0 ? " aspect-[16/9]" : " aspect-[4/3]"}`}>
-              {r.images[0] ? (
-                <Image
-                  src={r.images[0].url}
-                  alt={r.images[0].alt}
-                  fill
-                  priority={i < 3}
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  sizes={i === 0 ? "(max-width: 640px) 100vw, 66vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
-                />
-              ) : (
-                <div className="w-full h-full bg-beige" />
-              )}
+      <div className="flex flex-col gap-3">
+        {groups.map((group, groupIdx) => {
+          const largeLeft = groupIdx % 2 === 0;
 
-              {/* Overlay dégradé */}
-              <div className="absolute inset-0 bg-gradient-to-t from-noir-footer/75 via-noir-footer/20 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Service tag */}
-              {r.service && (
-                <div className="absolute top-3 left-3">
-                  <span className="label-upper text-[9px] text-creme bg-dore/90 px-2 py-1">
-                    {SERVICE_LABELS[r.service] ?? r.service}
-                  </span>
-                </div>
-              )}
-
-              {/* Nombre d'images */}
-              {r.images.length > 1 && (
-                <div className="absolute top-3 right-3">
-                  <span className="label-upper text-[9px] text-creme bg-noir-footer/60 px-2 py-1">
-                    {r.images.length} photos
-                  </span>
-                </div>
-              )}
-
-              {/* Texte bas */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
-                <h2 className={`text-creme font-serif leading-snug${i === 0 ? " text-xl md:text-2xl" : " text-base"}`}>
-                  {r.title}
-                </h2>
-                {r.location && (
-                  <p className="text-creme/70 text-xs mt-1 flex items-center gap-1">
-                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true">
-                      <path d="M5 0C2.79 0 1 1.79 1 4c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 5 2.5a1.5 1.5 0 0 1 0 3z" fill="currentColor" />
-                    </svg>
-                    {r.location}
-                  </p>
-                )}
+          // Groupe incomplet (fin de liste) : grille simple
+          if (group.length < 3) {
+            return (
+              <div
+                key={`group-${groupIdx}`}
+                className={`grid grid-cols-1 gap-3 ${
+                  group.length === 2 ? "md:grid-cols-2" : ""
+                }`}
+              >
+                {group.map(({ item, index }) => (
+                  <RealisationCard
+                    key={item._id}
+                    item={item}
+                    index={index}
+                    variant={group.length === 1 ? "large" : "small"}
+                    onOpen={open}
+                  />
+                ))}
               </div>
+            );
+          }
+
+          const large = largeLeft ? group[0] : group[2];
+          const smalls = largeLeft ? group.slice(1) : group.slice(0, 2);
+
+          return (
+            <div
+              key={`group-${groupIdx}`}
+              className="grid grid-cols-1 md:grid-cols-2 gap-3 md:items-stretch"
+            >
+              {largeLeft && (
+                <RealisationCard
+                  item={large.item}
+                  index={large.index}
+                  variant="large"
+                  onOpen={open}
+                />
+              )}
+
+              <div className="flex flex-col gap-3 md:h-full">
+                {smalls.map(({ item, index }) => (
+                  <RealisationCard
+                    key={item._id}
+                    item={item}
+                    index={index}
+                    variant="fill"
+                    onOpen={open}
+                  />
+                ))}
+              </div>
+
+              {!largeLeft && (
+                <RealisationCard
+                  item={large.item}
+                  index={large.index}
+                  variant="large"
+                  onOpen={open}
+                />
+              )}
             </div>
-          </button>
-        ))}
+          );
+        })}
       </div>
 
       {/* Lightbox */}
@@ -153,7 +259,6 @@ export default function RealisationsGallery({ items }: Props) {
           aria-modal="true"
           aria-label={current.title}
         >
-          {/* Conteneur image — stoppe la propagation du clic */}
           <div
             className="relative w-full h-full flex items-center justify-center p-4 md:p-16"
             onClick={(e) => e.stopPropagation()}
@@ -170,7 +275,6 @@ export default function RealisationsGallery({ items }: Props) {
             )}
           </div>
 
-          {/* Bouton fermer */}
           <button
             onClick={close}
             className="absolute top-4 right-4 z-10 text-creme/80 hover:text-creme transition-colors p-2"
@@ -181,7 +285,6 @@ export default function RealisationsGallery({ items }: Props) {
             </svg>
           </button>
 
-          {/* Flèche gauche */}
           <button
             onClick={(e) => { e.stopPropagation(); prev(); }}
             className="absolute left-3 top-1/2 -translate-y-1/2 z-10 text-creme/80 hover:text-creme transition-colors p-3"
@@ -192,7 +295,6 @@ export default function RealisationsGallery({ items }: Props) {
             </svg>
           </button>
 
-          {/* Flèche droite */}
           <button
             onClick={(e) => { e.stopPropagation(); next(); }}
             className="absolute right-3 top-1/2 -translate-y-1/2 z-10 text-creme/80 hover:text-creme transition-colors p-3"
@@ -203,7 +305,6 @@ export default function RealisationsGallery({ items }: Props) {
             </svg>
           </button>
 
-          {/* Infos bas */}
           <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-noir-footer to-transparent pointer-events-none">
             <div className="max-w-2xl mx-auto text-center">
               {current.service && (

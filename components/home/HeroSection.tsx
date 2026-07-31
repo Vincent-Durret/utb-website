@@ -84,7 +84,7 @@ export default function HeroSection() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-noir-footer/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-noir-footer/80 via-noir-footer/60 to-noir-footer/20" />
       </div>
 
       {/* Content */}

@@ -19,7 +19,7 @@ export default async function RealisationsPage() {
     location: r.location,
     service: r.service,
     images: (r.images ?? []).map((img) => ({
-      url: urlFor(img.asset).width(600).height(450).url(),
+      url: urlFor(img.asset).width(900).height(900).url(),
       urlFull: urlFor(img.asset).width(1400).height(1050).url(),
       alt: img.alt ?? r.title,
     })),

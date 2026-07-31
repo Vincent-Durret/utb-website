@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -13,16 +14,19 @@ const STEPS = [
     num: "1",
     title: "Étude",
     desc: "Prise de cotes et examen du terrain, calcul des hauteurs sous fenêtres, prise de photos du lieu, étude pour décaissement éventuel et plans.",
+    icon: "/images/accueil/icone-1.png",
   },
   {
     num: "2",
     title: "Mise en place",
     desc: "Gestion administrative, décaissement éventuel, mise en place de la structure, pose des lames et ponçage intégral de la terrasse.",
+    icon: "/images/accueil/icone-2.png",
   },
   {
     num: "3",
     title: "Livraison",
     desc: "Réception des travaux ensemble. Le devis est dit « fourni posé » — nous fournissons le bois choisi et procédons à l'installation.",
+    icon: "/images/accueil/icone-3.png",
   },
 ];
 
@@ -89,8 +93,11 @@ export default function ProcessSection() {
         </div>
 
         <div className="relative">
-          {/* SVG connecting line (desktop) */}
-          <div className="absolute top-7 left-[16%] right-[16%] hidden md:block h-px">
+          {/* Ligne de liaison (desktop) — centrée verticalement sur les icônes */}
+          <div
+            className="absolute left-[16.666%] right-[16.666%] hidden md:block h-px pointer-events-none"
+            style={{ top: "5rem" }}
+          >
             <svg className="w-full h-full overflow-visible" preserveAspectRatio="none">
               <line
                 ref={lineRef}
@@ -105,8 +112,15 @@ export default function ProcessSection() {
           <div ref={stepsRef} className="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
             {STEPS.map((step) => (
               <div key={step.num} className="flex flex-col items-center text-center opacity-0">
-                <div className="w-14 h-14 rounded-full bg-dore flex items-center justify-center mb-6 relative z-10">
-                  <span className="font-serif text-noir-bois text-xl">{step.num}</span>
+                <div className="relative z-10 mb-6 w-32 h-32 md:w-40 md:h-40 bg-creme">
+                  <Image
+                    src={step.icon}
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-contain"
+                    aria-hidden="true"
+                  />
                 </div>
                 <h3 className="text-noir-bois font-serif text-lg mb-3">{step.title}</h3>
                 <p className="text-muted text-sm leading-relaxed max-w-xs">{step.desc}</p>
