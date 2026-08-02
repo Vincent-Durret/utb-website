@@ -31,6 +31,15 @@ export type Actualite = {
   body?: unknown[];
 };
 
+export type Avis = {
+  _id: string;
+  authorName: string;
+  rating: number;
+  comment: string;
+  date?: string;
+  order?: number;
+};
+
 // Queries — return empty results if Sanity is not yet configured
 export async function getRealisations(service?: string): Promise<Realisation[]> {
   if (!isSanityConfigured) return [];
@@ -78,5 +87,14 @@ export async function getActualite(slug: string): Promise<Actualite | null> {
       }
     }`,
     { slug }
+  );
+}
+
+export async function getAvis(): Promise<Avis[]> {
+  if (!isSanityConfigured) return [];
+  return sanityClient.fetch(
+    `*[_type == "avis"] | order(order asc, date desc) {
+      _id, authorName, rating, comment, date, order
+    }`
   );
 }

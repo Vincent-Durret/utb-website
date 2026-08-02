@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
+import "./tarteaucitron-utb.css";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,6 +46,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Aller au contenu principal
         </a>
+        <CookieConsent />
         <Nav />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />

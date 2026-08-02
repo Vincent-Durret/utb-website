@@ -5,15 +5,19 @@ import ServicesSection from "@/components/home/ServicesSection";
 import ProcessSection from "@/components/home/ProcessSection";
 import RealisationsStrip from "@/components/home/RealisationsStrip";
 import type { RealisationPreview } from "@/components/home/RealisationsStrip";
+import AvisSection from "@/components/home/AvisSection";
 import FaqSection from "@/components/home/FaqSection";
 import TrustSection from "@/components/home/TrustSection";
 import CtaSection from "@/components/home/CtaSection";
-import { getRealisations, urlFor } from "@/lib/sanity.queries";
+import { getAvis, getRealisations, urlFor } from "@/lib/sanity.queries";
 
 export const revalidate = 3600; // ISR — revalide toutes les heures
 
+const GOOGLE_AVIS_URL =
+  process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ?? undefined;
+
 export default async function HomePage() {
-  const raw = await getRealisations();
+  const [raw, avis] = await Promise.all([getRealisations(), getAvis()]);
 
   const realisations: RealisationPreview[] = raw.slice(0, 5).map((r) => ({
     id: r._id,
@@ -36,6 +40,7 @@ export default async function HomePage() {
       <ServicesSection />
       <ProcessSection />
       <RealisationsStrip realisations={realisations} />
+      <AvisSection avis={avis} googleUrl={GOOGLE_AVIS_URL} />
       <FaqSection />
       <TrustSection />
       <CtaSection />

@@ -12,7 +12,7 @@ const SERVICES = [
   {
     num: "01",
     title: "Terrasses en bois",
-    desc: "Ipé, Cumaru, Teck. Esthétique chaleureuse, durabilité exceptionnelle et grande polyvalence d'aménagement. Visserie inox, ponçage intégral en fin de chantier.",
+    desc: "Esthétique chaleureuse, durabilité exceptionnelle et grande polyvalence d'aménagement. Visserie inox, ponçage intégral en fin de chantier.",
     href: "/services/terrasses-en-bois",
   },
   {

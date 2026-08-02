@@ -38,8 +38,14 @@ export default function MentionsLegalesPage() {
 
           <h2>Cookies</h2>
           <p>
-            Ce site utilise des cookies techniques nécessaires à son fonctionnement. Aucun cookie de
-            tracking ou publicitaire n&apos;est utilisé.
+            Ce site utilise des cookies techniques nécessaires à son fonctionnement, ainsi qu&apos;un
+            bandeau de consentement (tarteaucitron) pour gérer vos préférences. Vous pouvez à tout
+            moment modifier vos choix via l&apos;icône cookies en bas à gauche de l&apos;écran, ou en
+            suivant le lien{" "}
+            <a href="#tarteaucitron" className="text-brun underline">
+              #tarteaucitron
+            </a>
+            .
           </p>
 
           <h2>Politique de confidentialité</h2>

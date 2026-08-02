@@ -10,4 +10,7 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title("Actualités")
         .child(S.documentTypeList("actualite").title("Actualités")),
+      S.listItem()
+        .title("Avis Google")
+        .child(S.documentTypeList("avis").title("Avis Google")),
     ]);
