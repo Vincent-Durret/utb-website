@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,8 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="font-bold tracking-[0.2em] text-sm uppercase mb-1">Univers Terrasses Bois</div>
-            <div className="text-dore label-upper text-[9px] mb-4">Spécialiste Côte d&apos;Azur</div>
+            <Image
+              src="/images/logo/logo-utb.png"
+              alt="Univers Terrasses Bois"
+              width={200}
+              height={88}
+              unoptimized
+              className="h-14 w-auto mb-4"
+            />
             <p className="text-white/50 text-xs leading-relaxed">
               Construction de terrasses et pergolas en bois raffiné pour particuliers, entreprises et collectivités.
             </p>

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contactez Univers Terrasses Bois pour votre projet de terrasse. Devis gratuit en 72h. Alpes-Maritimes (06) et Var (83).",
+  title: "Contactez nous pour vos projets",
+  description: "Nous sommes à votre disposition pour construire vos terrasses en bois, vos pergolas et vos abris de voiture. Contactez-nous pour un devis.",
 };
 
 export default function ContactPage() {

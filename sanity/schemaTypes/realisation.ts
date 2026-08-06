@@ -30,7 +30,8 @@ export default defineType({
         list: [
           { title: "Terrasse en bois", value: "terrasses-bois" },
           { title: "Terrasse sur pilotis", value: "sur-pilotis" },
-          { title: "Pergola / Abri voiture", value: "pergolas" },
+          { title: "Pergola", value: "pergolas" },
+          { title: "Abri de voiture", value: "abris-de-voiture" },
           { title: "Terrasse piscine", value: "piscines" },
           { title: "Aménagement extérieur", value: "amenagements" },
           { title: "Toiture teck", value: "teck" },

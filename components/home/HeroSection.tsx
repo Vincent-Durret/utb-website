@@ -77,7 +77,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/accueil/1-meilleur-artisant-terrasse-bois-nice-mandelieu-fayence-2048x1366.jpeg"
+          src="/images/realisations/imgi_3_artisant-terrasse-bois-sur-mesure-cagnes-sur-mer-.jpg"
           alt="Terrasse bois sur pilotis Côte d'Azur"
           fill
           priority
@@ -110,7 +110,7 @@ export default function HeroSection() {
         <div ref={ctasRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/realisations"
-            className="border border-dore text-dore label-upper px-8 py-3.5 hover:bg-dore hover:text-noir-bois transition-colors"
+            className="border border- bg-[#7d6952] text-dore label-upper px-8 py-3.5 hover:bg-dore hover:text-noir-bois transition-colors transition-bg"
           >
             Nos réalisations
           </Link>

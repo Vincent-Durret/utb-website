@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
@@ -70,13 +71,17 @@ export default function Nav() {
       aria-label="Navigation principale"
       className="fixed top-0 left-0 right-0 z-50 bg-creme/95 backdrop-blur-sm border-b border-beige-card"
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-none" aria-label="Univers Terrasses Bois — Accueil">
-          <span className="text-noir-bois font-bold tracking-[0.2em] text-sm uppercase">
-            Univers Terrasses Bois
-          </span>
-          <span className="text-dore label-upper text-[9px]" aria-hidden="true">Spécialiste Côte d&apos;Azur</span>
+        <Link href="/" className="relative block shrink-0" aria-label="Univers Terrasses Bois — Accueil">
+          <Image
+            src="/images/logo/logo-utb.png"
+            alt="Univers Terrasses Bois"
+            width={200}
+            height={88}
+            priority
+            className="h-12 md:h-14 w-auto"
+          />
         </Link>
 
         {/* Desktop menu */}

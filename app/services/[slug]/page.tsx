@@ -29,7 +29,7 @@ const SERVICES: Record<string, ServiceData> = {
     ],
   },
   "terrasses-sur-pilotis": {
-    title: "Terrasses sur pilotis",
+    title: "Terrasses sur Pilotis",
     h1: "Terrasses bois sur pilotis",
     description: "Spécialiste terrasses bois sur pilotis en Côte d'Azur. Terrain en pente, espace non accessible — nous adaptons votre terrasse.",
     intro: [
@@ -61,7 +61,7 @@ const SERVICES: Record<string, ServiceData> = {
   "pergolas": {
     title: "Pergolas",
     h1: "Pergolas",
-    description: "Construction de pergolas en bois sur mesure. Alpes-Maritimes et Var — devis gratuit en 72h.",
+    description: "Ombrager vos déjeuners d'étés, profiter de vos soirées à l'abri de l'humidité, profitez de la vue sur votre jardin.",
     intro: [
       "Vous pouvez réaliser et concevoir des pergolas quelle que soit l'espace et le lieu que vous souhaitez ! Sachez que nous possédons les compétences adéquates et que de plus nous y apportons notre créativité. Concevoir et réaliser une pergola à ossature bois sur un espace réduit, arrimée de façon quasi invisible — là aussi, le professionnel est prépondérant. Des études en amont sont effectuées afin de tester la résistance au vent, au soulèvement et autres contraintes.",
       "Outre leur fonctionnalité, les pergolas amènent un univers cocooning à votre jardin, un coin d'ombre où déjeuner par exemple.",

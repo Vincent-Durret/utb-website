@@ -1,16 +1,26 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 
 const SERVICE_LABELS: Record<string, string> = {
   "terrasses-bois": "Terrasses en bois",
   "sur-pilotis": "Sur pilotis",
   "pergolas": "Pergolas",
+  "abris-de-voiture": "Abris de voiture",
   "piscines": "Piscines",
   "amenagements": "Aménagements",
   "teck": "Teck",
 };
+
+const FILTERS: Array<{ label: string; value: string | null }> = [
+  { label: "Tout voir", value: null },
+  { label: "Terrasses en bois", value: "terrasses-bois" },
+  { label: "Terrasses sur pilotis", value: "sur-pilotis" },
+  { label: "Aménagements en bois", value: "amenagements" },
+  { label: "Abris de voitures", value: "abris-de-voiture" },
+  { label: "Pergolas", value: "pergolas" },
+];
 
 export type RealisationItem = {
   _id: string;
@@ -39,11 +49,16 @@ const VARIANT_CLASS: Record<CardVariant, string> = {
 
 function RealisationCard({ item, index, variant = "small", onOpen }: CardProps) {
   const isLarge = variant === "large";
+  const [ref, inView] = useInView<HTMLButtonElement>();
 
   return (
     <button
+      ref={ref}
       onClick={() => onOpen(index)}
-      className={`group relative overflow-hidden text-left focus-visible:outline-2 focus-visible:outline-dore focus-visible:outline-offset-2 ${VARIANT_CLASS[variant]}`}
+      style={{ transitionDelay: inView ? `${(index % 3) * 90}ms` : "0ms" }}
+      className={`group relative overflow-hidden text-left focus-visible:outline-2 focus-visible:outline-dore focus-visible:outline-offset-2 transition-all duration-700 ease-out ${
+        inView ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-[0.96]"
+      } ${VARIANT_CLASS[variant]}`}
       aria-label={`Voir ${item.title} en plein écran`}
     >
       <div className="relative h-full w-full overflow-hidden">
@@ -56,7 +71,7 @@ function RealisationCard({ item, index, variant = "small", onOpen }: CardProps) 
             className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             sizes={
               isLarge
-                ? "(max-width: 768px) 100vw, 50vw"
+                ? "(max-width: 768px) 100vw, 75vw"
                 : "(max-width: 768px) 100vw, 25vw"
             }
           />
@@ -107,6 +122,33 @@ function RealisationCard({ item, index, variant = "small", onOpen }: CardProps) 
   );
 }
 
+function useInView<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return [ref, inView] as const;
+}
+
 function chunkItems<T>(arr: T[], size: number): T[][] {
   const chunks: T[][] = [];
   for (let i = 0; i < arr.length; i += size) {
@@ -115,9 +157,20 @@ function chunkItems<T>(arr: T[], size: number): T[][] {
   return chunks;
 }
 
-export default function RealisationsGallery({ items }: Props) {
+export default function RealisationsGallery({ items: allItems }: Props) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const [imgIdx, setImgIdx] = useState(0);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  const items = selectedService
+    ? allItems.filter((item) => item.service === selectedService)
+    : allItems;
+
+  const selectFilter = useCallback((value: string | null) => {
+    setSelectedService(value);
+    setOpenIdx(null);
+    setImgIdx(0);
+  }, []);
 
   const current = openIdx !== null ? items[openIdx] : null;
   const totalImages = current?.images.length ?? 0;
@@ -169,7 +222,7 @@ export default function RealisationsGallery({ items }: Props) {
     setImgIdx(0);
   }, []);
 
-  if (items.length === 0) {
+  if (allItems.length === 0) {
     return (
       <div className="text-center py-20 text-muted">
         <p className="text-sm">Les réalisations seront bientôt disponibles.</p>
@@ -182,73 +235,107 @@ export default function RealisationsGallery({ items }: Props) {
 
   return (
     <>
-      <div className="flex flex-col gap-3">
-        {groups.map((group, groupIdx) => {
-          const largeLeft = groupIdx % 2 === 0;
-
-          // Groupe incomplet (fin de liste) : grille simple
-          if (group.length < 3) {
+      <div className="bg-[#7a6a4f] py-6 md:py-7">
+        <div className="max-w-4xl mx-auto px-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          {FILTERS.map((filter) => {
+            const isActive = selectedService === filter.value;
             return (
-              <div
-                key={`group-${groupIdx}`}
-                className={`grid grid-cols-1 gap-3 ${
-                  group.length === 2 ? "md:grid-cols-2" : ""
+              <button
+                key={filter.label}
+                onClick={() => selectFilter(filter.value)}
+                aria-pressed={isActive}
+                className={`text-sm md:text-base font-medium pb-1 border-b transition-colors ${
+                  isActive
+                    ? "text-dore border-dore"
+                    : "text-creme/85 border-transparent hover:text-dore"
                 }`}
               >
-                {group.map(({ item, index }) => (
-                  <RealisationCard
-                    key={item._id}
-                    item={item}
-                    index={index}
-                    variant={group.length === 1 ? "large" : "small"}
-                    onOpen={open}
-                  />
-                ))}
-              </div>
+                {filter.label}
+              </button>
             );
-          }
-
-          const large = largeLeft ? group[0] : group[2];
-          const smalls = largeLeft ? group.slice(1) : group.slice(0, 2);
-
-          return (
-            <div
-              key={`group-${groupIdx}`}
-              className="grid grid-cols-1 md:grid-cols-2 gap-3 md:items-stretch"
-            >
-              {largeLeft && (
-                <RealisationCard
-                  item={large.item}
-                  index={large.index}
-                  variant="large"
-                  onOpen={open}
-                />
-              )}
-
-              <div className="flex flex-col gap-3 md:h-full">
-                {smalls.map(({ item, index }) => (
-                  <RealisationCard
-                    key={item._id}
-                    item={item}
-                    index={index}
-                    variant="fill"
-                    onOpen={open}
-                  />
-                ))}
-              </div>
-
-              {!largeLeft && (
-                <RealisationCard
-                  item={large.item}
-                  index={large.index}
-                  variant="large"
-                  onOpen={open}
-                />
-              )}
-            </div>
-          );
-        })}
+          })}
+        </div>
       </div>
+
+      <section className="bg-creme py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          {items.length === 0 ? (
+            <div className="text-center py-20 text-muted">
+              <p className="text-sm">Aucune réalisation dans cette catégorie pour l&apos;instant.</p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-3">
+              {groups.map((group, groupIdx) => {
+                const largeLeft = groupIdx % 2 === 0;
+
+                // Groupe incomplet (fin de liste) : grille simple
+                if (group.length < 3) {
+                  return (
+                    <div
+                      key={`group-${groupIdx}`}
+                      className={`grid grid-cols-1 gap-3 ${
+                        group.length === 2 ? "md:grid-cols-2" : ""
+                      }`}
+                    >
+                      {group.map(({ item, index }) => (
+                        <RealisationCard
+                          key={item._id}
+                          item={item}
+                          index={index}
+                          variant={group.length === 1 ? "large" : "small"}
+                          onOpen={open}
+                        />
+                      ))}
+                    </div>
+                  );
+                }
+
+                const large = largeLeft ? group[0] : group[2];
+                const smalls = largeLeft ? group.slice(1) : group.slice(0, 2);
+
+                return (
+                  <div
+                    key={`group-${groupIdx}`}
+                    className={`grid grid-cols-1 gap-3 md:items-stretch ${
+                      largeLeft ? "md:grid-cols-[3fr_1fr]" : "md:grid-cols-[1fr_3fr]"
+                    }`}
+                  >
+                    {largeLeft && (
+                      <RealisationCard
+                        item={large.item}
+                        index={large.index}
+                        variant="large"
+                        onOpen={open}
+                      />
+                    )}
+
+                    <div className="flex flex-col gap-3 md:h-full">
+                      {smalls.map(({ item, index }) => (
+                        <RealisationCard
+                          key={item._id}
+                          item={item}
+                          index={index}
+                          variant="fill"
+                          onOpen={open}
+                        />
+                      ))}
+                    </div>
+
+                    {!largeLeft && (
+                      <RealisationCard
+                        item={large.item}
+                        index={large.index}
+                        variant="large"
+                        onOpen={open}
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* Lightbox */}
       {openIdx !== null && current && (

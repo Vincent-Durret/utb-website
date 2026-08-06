@@ -4,8 +4,8 @@ import Image from "next/image";
 import { getActualites, urlFor } from "@/lib/sanity.queries";
 
 export const metadata: Metadata = {
-  title: "Actualités bois",
-  description: "Toutes les actualités d'Univers Terrasses Bois : conseils entretien, nouveaux bois, tendances terrasses extérieures.",
+  title: "Nos actualités",
+  description: "Découvrez les actualités et dernières constructions de terrasses en bois et pergolas d'Univers Terrasses Bois",
 };
 
 export const revalidate = 3600;

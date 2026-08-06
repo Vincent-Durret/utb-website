@@ -4,9 +4,9 @@ import Link from "next/link";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
-  title: "Nos services",
+  title: "Nos services : Terrasse bois, Pergolas et Abris de voiture",
   description:
-    "Terrasses en bois, terrasses sur pilotis, piscines & jardins, pergolas, aménagements extérieurs — Univers Terrasses Bois, spécialiste Côte d'Azur.",
+    "Découvrez toutes nos options pour la construction de vos terrasses et pergolas en bois à Nice, Antibes et Cannes et toute la région",
 };
 
 const SERVICE_CARDS = [

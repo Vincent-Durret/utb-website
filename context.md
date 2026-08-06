@@ -58,6 +58,7 @@
 - [x] Nav sticky avec GSAP hide/show au scroll + menu services dropdown
 - [x] Footer avec 4 colonnes (brand, services, liens, contact)
 - [x] Layout global app/layout.tsx
+- [x] Bug dropdown "Nos services" — gap de 8px entre bouton et menu provoquait la fermeture prématurée. Fix : délai 150ms sur `onMouseLeave` via `clearTimeout`/`setTimeout`
 
 ### ✅ Homepage
 - [x] HeroSection — GSAP SplitText + stagger fadeUp + image de fond
@@ -78,12 +79,18 @@
 - [x] `/contactez-nous` → redirect 301 → `/contact` (next.config.ts)
 
 ### ✅ Pages services (6) — template dynamique
-- [x] `/services/terrasses-en-bois`
-- [x] `/services/terrasses-sur-pilotis`
-- [x] `/services/terrasses-piscines-jardins`
-- [x] `/services/pergolas`
-- [x] `/services/amenagements-exterieurs`
-- [x] `/services/abris-de-voiture`
+- [x] `/nos-services` — page overview (grille des 6 cartes services)
+- [x] `/services/terrasses-en-bois` — hero, intro, processus, galerie
+- [x] `/services/terrasses-sur-pilotis` — hero, intro, processus, galerie
+- [x] `/services/terrasses-piscines-jardins` — hero, intro, processus, galerie
+- [x] `/services/pergolas` — hero, intro, processus, galerie
+- [x] `/services/amenagements-exterieurs` — hero, intro, processus, galerie
+- [x] `/services/abris-de-voiture` — hero, intro, processus, galerie (n'existe pas sur le site en ligne — page propre à la refonte)
+
+### ✅ Pages types_services (3) — template dynamique
+- [x] `/types_services/terrasses-bois`
+- [x] `/types_services/terrasses-bois-sur-pilotis`
+- [x] `/types_services/abris-voitures-pergolas`
 
 ### ✅ Pages SEO villes (12) — template dynamique
 - [x] `/villes/nice`
@@ -107,7 +114,10 @@
 - [x] Studio accessible sur `/studio`
 
 ### ✅ Pages dynamiques (Sanity)
-- [x] `/realisations` — galerie plein-cadre : overlay dégradé au hover, texte sur image, 1ère carte featured 16:9 sur 2 colonnes, badge service doré, lightbox plein écran au clic (navigation clavier/boutons, multi-images, fermeture Escape/backdrop)
+- [x] `/realisations` — galerie plein-cadre : overlay dégradé au hover, texte sur image, badge service doré, lightbox plein écran au clic (navigation clavier/boutons, multi-images, fermeture Escape/backdrop)
+- [x] `/realisations` — grille alternée : 1ère photo sur 3/4 de la largeur + 2 petites empilées sur le 1/4 restant, inversion gauche/droite à chaque ligne
+- [x] `/realisations` — barre de filtres par type (Tout voir, Terrasses en bois, Terrasses sur pilotis, Aménagements en bois, Abris de voitures, Pergolas), filtrage client-side
+- [x] `/realisations` — animation d'apparition au scroll (IntersectionObserver, fondu + translation + cascade par ligne)
 - [x] `/realisations/[slug]` — page détail réalisation (Sanity)
 - [x] `/actualites-bois` — liste articles
 - [x] `/actualites-bois/[slug]` — article individuel (PortableText)
@@ -119,22 +129,22 @@
 ### ✅ Assets
 - [x] Copier images scraper → `public/images/` (36 images)
 - [x] `next.config.ts` — remotePatterns Sanity CDN + redirect contactez-nous
+- [x] Favicon — `app/icon.png` (convention Next.js App Router, détection auto), ancien `favicon.ico` par défaut supprimé
+
+### ✅ Sanity — Contenu
+- [x] Schema `realisation` — champ `service` : "Pergola" et "Abri de voiture" séparés en deux valeurs distinctes
+- [x] `npx sanity schema deploy` — schéma déployé en production
+- [x] 88 réalisations importées dans Sanity (titre/ville/type déduits des noms de fichiers `public/images/realisations/`, upload images + création documents via script `@sanity/client`)
+
+### ✅ SEO
+- [x] Meta title/description scrapés sur le site en ligne (`universterrassesbois.fr`) et appliqués : accueil, à-propos, nos-services, réalisations, mentions légales, actualités (index), contact, devis, 5 pages `/services/[slug]`
+- [x] Les 15 articles Sanity (`actualite`) — titre + extrait (= meta description) synchronisés avec le site en ligne ; corrigé au passage un extrait mal assigné (article "Woodsurfer Magazine" avait l'extrait de l'article "tour de piscine")
+- [x] `app/robots.ts` — autorise Googlebot
+- [x] Fix warning Next.js Image : `sizes` manquant sur l'image `fill` de `/a-propos`
 
 ---
 
 ## 🔲 À faire
-
-### Pages manquantes (3 URLs à préserver)
-- [ ] `/nos-services` — page overview de tous les services
-- [ ] `/types_services/terrasses-bois`
-- [ ] `/types_services/terrasses-bois-sur-pilotis`
-- [ ] `/types_services/abris-voitures-pergolas`
-
-### Pages services — refonte design + photos
-- [ ] Revoir le design des 6 pages `/services/[slug]` (mise en page plus riche)
-- [ ] Ajouter une photo hero en haut de chaque page service (depuis `public/images/`)
-- [ ] Ajouter une galerie de photos sur chaque page service
-- [ ] Associer les bonnes images scraper à chaque service
 
 ### Avis Google (Places API)
 - [ ] Créer projet Google Cloud Console + activer Places API
@@ -143,18 +153,12 @@
 - [ ] Créer composant `ReviewsSection` — affichage étoiles + texte + nom + date
 - [ ] Intégrer sur homepage (entre TrustSection et CtaSection) ou page contact
 
-### Bug — menu dropdown navigation
-- [x] Dropdown "Nos services" — gap de 8px entre bouton et menu provoquait la fermeture prématurée. Fix : délai 150ms sur `onMouseLeave` via `clearTimeout`/`setTimeout`
-
-### Sanity — contenu
-- [ ] `npx sanity schema deploy` — déployer le schéma en production
-- [ ] Uploader les photos de réalisations dans le Studio (`/studio`)
-
 ### SEO & technique
-- [ ] `app/sitemap.ts` — sitemap XML automatique (toutes les 30 URLs)
-- [ ] `app/robots.ts` — autoriser Googlebot
+- [ ] `app/sitemap.ts` — sitemap XML automatique (toutes les URLs)
 - [ ] Soumettre le sitemap dans Google Search Console après mise en ligne
-- [ ] Ajouter `@tailwindcss/typography` pour le rendu PortableText (articles)
+- [ ] Ajouter `@tailwindcss/typography` pour le rendu PortableText (articles) — classes `prose` déjà utilisées dans `/actualites-bois/[slug]` mais le plugin n'est pas installé
+- [ ] Importer l'article de blog manquant "Mettre en valeur sa terrasse en bois" (existe sur le site en ligne, jamais importé dans Sanity)
+- [ ] `robots: { index: false, follow: false }` dans `app/layout.tsx` — à repasser en indexable avant la mise en ligne définitive
 
 ### Formulaire devis
 - [ ] Installer Resend (`npm install resend`) + créer route API `app/api/devis/route.ts`
@@ -164,14 +168,13 @@
 - [ ] Valider le token reCAPTCHA côté serveur dans la route API avant envoi
 
 ### Déploiement Vercel
+- [x] `git init` + repo GitHub créé et poussé (`github.com/Vincent-Durret/utb-website`)
 - [ ] Ajouter `.superpowers/` dans `.gitignore`
-- [ ] `git init && git add . && git commit`
-- [ ] Créer repo GitHub et pousser
 - [ ] Connecter à Vercel, ajouter variables d'env :
   - `NEXT_PUBLIC_SANITY_PROJECT_ID=k1houfoj`
   - `NEXT_PUBLIC_SANITY_DATASET=production`
-  - `SANITY_API_TOKEN` (token lecture pour ISR)
-- [ ] Vérifier toutes les 30 URLs en production (pas de 404)
+  - `SANITY_API_TOKEN` (token lecture pour ISR — non défini dans `.env.local` actuellement)
+- [ ] Vérifier toutes les URLs en production (pas de 404)
 - [ ] Lighthouse audit (perf ≥ 90, SEO 100, accessibilité 90+)
 
 ---

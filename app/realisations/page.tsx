@@ -4,8 +4,8 @@ import CtaSection from "@/components/home/CtaSection";
 import RealisationsGallery from "@/components/realisations/RealisationsGallery";
 
 export const metadata: Metadata = {
-  title: "Nos réalisations",
-  description: "Découvrez toutes les réalisations d'Univers Terrasses Bois : terrasses bois, sur pilotis, pergolas en Alpes-Maritimes et Var.",
+  title: "Nos réalisations de terrasses, pergolas et abris de voiture",
+  description: "Découvrez toutes nos réalisations de terrasses en bois et sur pilotis, de pergolas et d'abris de voiture dans les Alpes-Maritimes et le 83",
 };
 
 export const revalidate = 3600;
@@ -36,11 +36,7 @@ export default async function RealisationsPage() {
         </p>
       </div>
 
-      <section className="bg-creme py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <RealisationsGallery items={items} />
-        </div>
-      </section>
+      <RealisationsGallery items={items} />
 
       <CtaSection />
     </>

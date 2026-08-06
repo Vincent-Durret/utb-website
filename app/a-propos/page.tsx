@@ -3,8 +3,8 @@ import Image from "next/image";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
-  title: "À propos",
-  description: "Au cœur de votre nature. Univers Terrasses Bois, 12 ans d'expertise en terrasses bois sur pilotis, pergolas et aménagements extérieurs en Alpes-Maritimes.",
+  title: "Réalisation et installation de terrasses en bois",
+  description: "Société de réalisation de terrasses en bois, spécialiste de la terrasse en bois sur pilotis, devis sous 48h",
 };
 
 export default function AProposPage() {
@@ -28,6 +28,7 @@ export default function AProposPage() {
               disposition un savoir-faire acquis au fil des années et une expertise technique confirmée.
               Nous sommes créatifs et fiers de notre Métier, qui est notre Passion.
             </p>
+            <p className="text-muted text-sm leading-relaxed mb-4">Spécialiste de la conception, du calcul, de la réalisation et de l'expertise des structures bois extérieures complexes. </p>
             <p className="text-muted text-sm leading-relaxed mb-4">
               Nous vous offrons pour un résultat durable et esthétique des matériaux de qualité : bois aux
               essences variées, labellisés et issus de forêts gérées durablement, visserie inox de fabrication
@@ -41,7 +42,13 @@ export default function AProposPage() {
           </div>
           <div className="relative aspect-[4/3]">
             <div className="absolute inset-0 bg-gradient-to-br from-beige-card to-brun/20" />
-            <Image src="/images/a-propos/logo-grave-1.jpg" alt="Expertise" fill className="object-cover" />
+            <Image
+              src="/images/a-propos/logo-grave-1.jpg"
+              alt="Expertise"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>

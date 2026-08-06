@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Devis gratuit",
-  description: "Demandez votre devis gratuit pour une terrasse en bois. Réponse en 72h — Alpes-Maritimes et Var.",
+  title: "Demande de devis",
+  description: "Demandez votre devis personnalisé pour la réalisation de votre terrasse en bois ou sur pilotis, votre pergolas ou votre abri de voiture.",
 };
 
 export default function DevisContactPage() {
