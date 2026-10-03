@@ -34,11 +34,11 @@ export default function AProposPage() {
               essences variées, labellisés et issus de forêts gérées durablement, visserie inox de fabrication
               allemande, outillage professionnel de qualité et efficace.
             </p>
-            <p className="text-muted">
+            <p className="text-muted mb-4">
               Nos finitions sont minutieuses et soignées. Nous épousons les formes environnementales de la
-              surface à habiller et{" "}
-              <strong className="text-noir-bois">notre plus : nous ponçons intégralement la terrasse en fin de chantier.</strong>
+              surface à habiller. 
             </p>
+              <p className="text-muted mb-4"><strong className="text-dore">Notre plus : nous ponçons intégralement la terrasse en fin de chantier.</strong></p>
           </div>
           <div className="relative aspect-[4/3]">
             <div className="absolute inset-0 bg-gradient-to-br from-beige-card to-brun/20" />

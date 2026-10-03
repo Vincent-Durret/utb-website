@@ -46,8 +46,8 @@ export default function ContactPage() {
           <div>
             <h2 className="text-noir-bois mb-6">Zone d&apos;intervention</h2>
             <p className="text-muted mb-4">
-              Nous intervenons principalement dans les <strong className="text-noir-bois">Alpes-Maritimes (06)</strong> et
-              le <strong className="text-noir-bois">Var (83)</strong> : Menton, Monaco, Nice, St Laurent du Var,
+              Nous intervenons principalement dans les <strong className="text-dore">Alpes-Maritimes (06)</strong> et
+              le <strong className="text-dore">Var (83)</strong> : Menton, Monaco, Nice, St Laurent du Var,
               Cagnes sur Mer, Antibes, Cannes, Mandelieu, Mougins, Fréjus, St Tropez, Sospel,
               Valberg, Vence, Grasse, St Cézaire…
             </p>

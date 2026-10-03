@@ -133,8 +133,8 @@ export default function ProcessSection() {
         <div className="mt-14 bg-beige border border-beige-card p-6 text-center max-w-2xl mx-auto">
           <p className="text-muted text-xs leading-relaxed">
             Nos ouvrages résistent au temps qui passe. Notre activité est couverte en
-            <strong className="text-noir-bois"> Responsabilité Civile</strong> et{" "}
-            <strong className="text-noir-bois">Responsabilité Civile Décennale</strong> auprès des
+            <strong className="text-dore"> Responsabilité Civile</strong> et{" "}
+            <strong className="text-dore">Responsabilité Civile Décennale</strong> auprès des
             Mutuelles du Mans (MMA).
           </p>
         </div>

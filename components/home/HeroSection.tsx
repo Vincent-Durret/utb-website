@@ -110,7 +110,7 @@ export default function HeroSection() {
         <div ref={ctasRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/realisations"
-            className="border border- bg-[#7d6952] text-dore label-upper px-8 py-3.5 hover:bg-dore hover:text-noir-bois transition-colors transition-bg"
+            className="border border- bg-[#fff] text-noir-bois  font-semibold label-upper px-8 py-3.5 hover:bg-dore hover:text-noir-bois transition-colors transition-bg"
           >
             Nos réalisations
           </Link>
@@ -125,8 +125,8 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-creme/40">
-        <span className="label-upper text-[8px]">Découvrir</span>
-        <div className="w-px h-10 bg-creme/20 animate-pulse" />
+        <span className="label-upper font-bold text-creme text-[10px]">Découvrir</span>
+        <div className="w-px h-10 bg-creme animate-pulse" />
       </div>
     </section>
   );

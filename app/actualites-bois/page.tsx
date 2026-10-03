@@ -22,7 +22,7 @@ export default async function ActualitesPage() {
       </div>
 
       <section className="bg-creme py-16">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           {actualites.length === 0 ? (
             <div className="text-center py-20 text-muted">
               <p>Aucune actualité pour le moment.</p>

@@ -49,7 +49,7 @@ export default async function VillePage({ params }: { params: Promise<{ slug: st
       <section className="bg-creme py-16">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-muted mb-6">
-            Univers Terrasses Bois intervient à <strong className="text-noir-bois">{ville.name}</strong> ({ville.dept})
+            Univers Terrasses Bois intervient à <strong className="text-dore">{ville.name}</strong> ({ville.dept})
             pour la construction de terrasses en bois, terrasses sur pilotis, pergolas et aménagements
             extérieurs. Devis gratuit remis en 72h.
           </p>
