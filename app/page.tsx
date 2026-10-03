@@ -41,8 +41,8 @@ export default async function HomePage() {
       <ProcessSection />
       <RealisationsStrip realisations={realisations} />
       <AvisSection avis={avis} googleUrl={GOOGLE_AVIS_URL} />
-      <FaqSection />
       <TrustSection />
+      <FaqSection />
       <CtaSection />
     </>
   );

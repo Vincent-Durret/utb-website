@@ -75,9 +75,9 @@ export default function AProposPage() {
               "La rapidité d'exécution",
               "L'adaptation aux différences climatiques",
             ].map((avantage) => (
-              <div key={avantage} className="flex items-start gap-2 py-2">
+              <div key={avantage} className="flex items-center gap-2 py-2">
                 <span className="text-dore mt-0.5 flex-shrink-0">✓</span>
-                <span className="text-noir-bois text-xs">{avantage}</span>
+                <span className="text-noir-bois text-sm">{avantage}</span>
               </div>
             ))}
           </div>
@@ -91,8 +91,8 @@ export default function AProposPage() {
           <div className="dore-line mx-auto mb-6" />
           <p className="text-muted mb-4">
             L&apos;entreprise basée sur Sophia Antipolis (06560) opère sur l&apos;ensemble des
-            <strong className="text-noir-bois"> Alpes Maritimes (06)</strong> et du{" "}
-            <strong className="text-noir-bois">Var (83)</strong>. Menton, Monaco, Nice, St Laurent du Var,
+            <strong className="text-dore"> Alpes Maritimes (06)</strong> et du{" "}
+            <strong className="text-dore">Var (83)</strong>. Menton, Monaco, Nice, St Laurent du Var,
             Cagnes sur Mer, Antibes, Cannes, Mandelieu, Mougins, Fréjus, St Tropez, Sospel, Valberg,
             Vence, Grasse, St Cézaire…
           </p>
@@ -100,9 +100,9 @@ export default function AProposPage() {
             Nous nous déplaçons au-delà ponctuellement sur demande.
           </p>
           <div className="bg-beige border border-beige-card p-6 inline-block">
-            <p className="text-muted text-xs leading-relaxed">
-              Couverture en <strong className="text-noir-bois">Responsabilité Civile</strong> et{" "}
-              <strong className="text-noir-bois">Responsabilité Civile Décennale</strong> auprès des
+            <p className="text-muted text-sm leading-relaxed">
+              Couverture en <strong className="text-dore">Responsabilité Civile</strong> et{" "}
+              <strong className="text-dore">Responsabilité Civile Décennale</strong> auprès des
               Mutuelles du Mans (MMA). Garantie 10 ans sur tous nos ouvrages.
             </p>
           </div>

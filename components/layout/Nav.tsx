@@ -89,7 +89,7 @@ export default function Nav() {
           {/* Services dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
-              className="label-upper text-muted hover:text-brun transition-colors flex items-center gap-1"
+              className="label-upper font-bold text-[#635454] cursor-pointer hover:text-brun transition-colors flex items-center gap-1"
               onMouseEnter={() => {
                 if (closeTimer.current) clearTimeout(closeTimer.current);
                 setServicesOpen(true);
@@ -138,19 +138,19 @@ export default function Nav() {
             )}
           </div>
 
-          <Link href="/realisations" className="label-upper text-muted hover:text-brun transition-colors">
+          <Link href="/realisations" className="label-upper font-bold text-[#635454] hover:text-brun cursor-pointer transition-colors">
             Réalisations
           </Link>
-          <Link href="/actualites-bois" className="label-upper text-muted hover:text-brun transition-colors">
+          <Link href="/actualites-bois" className="label-upper font-bold text-[#635454] hover:text-brun cursor-pointer transition-colors">
             Actualités
           </Link>
-          <Link href="/a-propos" className="label-upper text-muted hover:text-brun transition-colors">
+          <Link href="/a-propos" className="label-upper font-bold text-[#635454] hover:text-brun cursor-pointer transition-colors">
             À propos
           </Link>
 
           <Link
             href="/contact"
-            className="bg-brun text-creme label-upper px-5 py-2.5 hover:bg-brun-dark transition-colors"
+            className="bg-dore text-noir-bois font-bold label-upper px-5 py-2.5 hover:bg-creme transition-colors"
           >
             Devis gratuit
           </Link>

@@ -256,7 +256,7 @@ export default function RealisationsGallery({ items: allItems }: Props) {
         </div>
       </div>
 
-      <section className="bg-creme py-16">
+      <section className="bg-creme pb-16">
         <div className="max-w-7xl mx-auto px-6">
           {items.length === 0 ? (
             <div className="text-center py-20 text-muted">

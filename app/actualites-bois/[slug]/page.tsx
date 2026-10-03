@@ -56,7 +56,7 @@ export default async function ActualitePage({ params }: { params: Promise<{ slug
       )}
 
       <article className="bg-creme py-14">
-        <div className="max-w-2xl mx-auto px-6 prose prose-neutral prose-headings:font-serif prose-headings:text-noir-bois prose-p:text-muted prose-p:text-texte">
+        <div className="max-w-6xl mx-auto px-6 prose prose-neutral prose-headings:font-serif prose-headings:text-noir-bois prose-p:text-muted prose-p:text-texte">
           {article.body && (
             <PortableText
               value={article.body as Parameters<typeof PortableText>[0]["value"]}
