@@ -60,11 +60,12 @@ export default function UniversSection() {
         {/* Image */}
         <div ref={imageRef} className="relative aspect-[4/3] overflow-hidden rounded-sm">
           <Image
-            src="/images/accueil/2-terrasse_bois_cote_dazur-q81nzb2ayi05arp3jv34us63519my0n4pnc2cuuoac.jpg"
+            src="/images/accueil/1-meilleur-artisant-terrasse-bois-nice-mandelieu-fayence-2048x1366.jpeg"
             alt="Terrasse bois côte d'Azur — Univers Terrasses Bois"
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 1920px) 100vw, 50vw"
+            loading="eager"
           />
         </div>
 
@@ -76,17 +77,12 @@ export default function UniversSection() {
           </h2>
           <div className="dore-line mb-6" />
           <p className="text-muted mb-4">
-            L&apos;Entreprise UTB basée sur Sophia Antipolis intervient principalement dans les
+            L&apos;Entreprise <strong className="text-dore">Univers Terrasses Bois</strong> basée sur Sophia Antipolis intervient principalement dans les
             Alpes-Maritimes (06) et le Var (83). Menton, Monaco, Nice, Cannes, Mandelieu,
             Fréjus, St Tropez… Nous nous adaptons à chaque terrain et configuration.
           </p>
-          <p className="text-muted mb-4">
-            La terrasse bois offre une esthétique chaleureuse, une durabilité exceptionnelle et
-            une grande polyvalence d&apos;aménagement. Les bois exotiques tels que le Cumaru,
-            l&apos;Itauba et l&apos;Ipé sont recommandés pour leur durabilité et leur résistance.
-          </p>
           <p className="text-muted">
-            UNE ÉTUDE MINUTIEUSE, UN CHANTIER LIVRÉ DANS LES RÈGLES DE L&apos;ART.
+          N’hésitez pas à nous consulter, nous sommes disponibles quand vous l’êtes et à l’écoute de vos désirs. Nous vous apportons les solutions peu importe la difficulté et les contraintes de votre terrain, nous adaptons votre terrasse à sa configuration et respectons votre environnement. Faites vous plaisir dès maintenant !
           </p>
         </div>
       </div>

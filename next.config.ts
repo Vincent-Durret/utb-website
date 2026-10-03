@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         destination: "/contact",
         permanent: true,
       },
+      {
+        source: "/devis/contact",
+        destination: "/contact",
+        permanent: true,
+      },
     ];
   },
 };

@@ -50,7 +50,7 @@ export default function CtaSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/devis/contact"
+            href="/contact"
             className="bg-dore text-noir-bois label-upper px-10 py-4 font-semibold hover:bg-creme transition-colors"
           >
             Nous contacter →

@@ -115,7 +115,7 @@ export default function HeroSection() {
             Nos réalisations
           </Link>
           <Link
-            href="/devis/contact"
+            href="/contact"
             className="bg-dore text-noir-bois label-upper px-8 py-3.5 font-semibold hover:bg-creme transition-colors"
           >
             Devis gratuit

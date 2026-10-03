@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useReducedMotion } from "@/lib/useReducedMotion";
+import { SearchIcon, HammerIcon, KeyIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
@@ -14,19 +15,19 @@ const STEPS = [
     num: "1",
     title: "Étude",
     desc: "Prise de cotes et examen du terrain, calcul des hauteurs sous fenêtres, prise de photos du lieu, étude pour décaissement éventuel et plans.",
-    icon: "/images/accueil/icone-1.png",
+    icon: <SearchIcon width={44} height={44} stroke="#c8a96e"/>,
   },
   {
     num: "2",
     title: "Mise en place",
     desc: "Gestion administrative, décaissement éventuel, mise en place de la structure, pose des lames et ponçage intégral de la terrasse.",
-    icon: "/images/accueil/icone-2.png",
+    icon: <HammerIcon width={44} height={44} stroke="#c8a96e"/>,
   },
   {
     num: "3",
     title: "Livraison",
     desc: "Réception des travaux ensemble. Le devis est dit « fourni posé » — nous fournissons le bois choisi et procédons à l'installation.",
-    icon: "/images/accueil/icone-3.png",
+    icon: <KeyIcon width={44} height={44} stroke="#c8a96e"/>,
   },
 ];
 
@@ -102,8 +103,8 @@ export default function ProcessSection() {
               <line
                 ref={lineRef}
                 x1="0" y1="0" x2="100%" y2="0"
-                stroke="#c8a96e"
-                strokeWidth="1"
+                stroke="#776a52"
+                strokeWidth="0.5"
                 strokeDasharray="4 4"
               />
             </svg>
@@ -112,15 +113,8 @@ export default function ProcessSection() {
           <div ref={stepsRef} className="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
             {STEPS.map((step) => (
               <div key={step.num} className="flex flex-col items-center text-center opacity-0">
-                <div className="relative z-10 mb-6 w-32 h-32 md:w-40 md:h-40 bg-creme">
-                  <Image
-                    src={step.icon}
-                    alt=""
-                    width={160}
-                    height={160}
-                    className="w-full h-full object-contain"
-                    aria-hidden="true"
-                  />
+                <div className="relative z-10 mb-6 w-32 h-32 md:w-40 md:h-40 bg-creme flex items-center justify-center">
+                  {step.icon}
                 </div>
                 <h3 className="text-noir-bois font-serif mb-3">{step.title}</h3>
                 <p className="text-muted max-w-xs">{step.desc}</p>

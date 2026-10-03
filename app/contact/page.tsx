@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CtaSection from "@/components/home/CtaSection";
+import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contactez nous pour vos projets",
@@ -9,16 +9,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Page header */}
       <div className="bg-beige pt-28 pb-14 text-center">
         <div className="label-upper text-brun text-[9px] mb-3">Parlons de votre projet</div>
         <h1 className="text-noir-bois">Contact</h1>
         <div className="dore-line mx-auto mt-4" />
       </div>
 
-      {/* Contact infos */}
-      <section className="bg-creme py-16">
-        <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <section className="bg-creme py-16" aria-labelledby="form-title">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <h2 className="text-noir-bois mb-6">Nos coordonnées</h2>
             <div className="space-y-4 text-muted">
@@ -41,22 +39,19 @@ export default function ContactPage() {
                 <p>Lundi – Samedi · 8h00 – 19h00</p>
               </div>
             </div>
-          </div>
 
-          <div>
-            <h2 className="text-noir-bois mb-6">Zone d&apos;intervention</h2>
+            <h2 className="text-noir-bois mt-12 mb-6">Zone d&apos;intervention</h2>
             <p className="text-muted mb-4">
               Nous intervenons principalement dans les <strong className="text-dore">Alpes-Maritimes (06)</strong> et
               le <strong className="text-dore">Var (83)</strong> : Menton, Monaco, Nice, St Laurent du Var,
               Cagnes sur Mer, Antibes, Cannes, Mandelieu, Mougins, Fréjus, St Tropez, Sospel,
               Valberg, Vence, Grasse, St Cézaire…
             </p>
-            <p className="text-muted">Nous nous déplaçons au-delà ponctuellement — consultez-nous.</p>
           </div>
+
+          <ContactForm />
         </div>
       </section>
-
-      <CtaSection />
     </>
   );
 }

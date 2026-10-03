@@ -181,7 +181,7 @@ export default async function ServicePage({
       <section className="bg-beige py-14">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
-            <div className="label-upper text-brun text-[9px] mb-3">Comment ça se passe</div>
+            <div className="label-upper text-brun text-[9px] mb-3">Les étapes clés</div>
             <h2 className="text-noir-bois">Notre processus</h2>
             <div className="dore-line mx-auto mt-4" />
           </div>
@@ -192,7 +192,7 @@ export default async function ServicePage({
                   {step.num}
                 </div>
                 <h3 className="text-noir-bois mb-2">{step.title}</h3>
-                <p className="text-muted text-xs leading-relaxed">{step.desc}</p>
+                <p className="text-muted text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>

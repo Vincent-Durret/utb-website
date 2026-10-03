@@ -111,8 +111,8 @@ export default function TrustSection() {
           {TRUST.map((item) => (
             <div key={item.title} className="trust-item opacity-0 flex flex-col items-center text-center gap-3 py-4 px-2">
               <span>{item.icon}</span>
-              <h3 className="text-noir-bois font-serif">{item.title}</h3>
-              <p className="text-muted text-xs leading-relaxed">{item.desc}</p>
+              <h3 className="text-noir-bois font-semibold font-serif">{item.title}</h3>
+              <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
