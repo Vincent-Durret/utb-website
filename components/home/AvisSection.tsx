@@ -84,7 +84,7 @@ function AvisCard({
     >
       <Stars rating={item.rating} />
       <div className="flex-1">
-        <p className="text-muted text-sm leading-relaxed">« {displayed} »</p>
+        <p className="text-muted">« {displayed} »</p>
         {needsTruncate && (
           <button
             type="button"
@@ -151,11 +151,11 @@ export default function AvisSection({ avis, googleUrl }: Props) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="label-upper text-brun text-[9px] mb-3">Avis clients</div>
-          <h2 className="text-noir-bois text-3xl md:text-4xl">
+          <h2 className="text-noir-bois">
             Ce que disent nos clients
           </h2>
           <div className="dore-line mx-auto mt-4" />
-          <div className="mt-5 flex items-center justify-center gap-3 text-sm text-muted">
+          <div className="mt-5 flex items-center justify-center gap-3 text-muted">
             <Stars rating={Math.round(avg)} />
             <span>
               <span className="text-noir-bois font-medium">{avg}</span>

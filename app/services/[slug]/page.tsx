@@ -161,7 +161,7 @@ export default async function ServicePage({
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <div className="label-upper text-dore text-[9px] mb-3">Nos services</div>
-          <h1 className="text-creme text-4xl md:text-5xl">{service.h1}</h1>
+          <h1 className="text-creme">{service.h1}</h1>
           <div className="dore-line mx-auto mt-4" />
         </div>
       </div>
@@ -170,7 +170,7 @@ export default async function ServicePage({
       <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-6 space-y-4">
           {service.intro.map((p) => (
-            <p key={p.slice(0, 40)} className="text-muted text-sm leading-relaxed">
+            <p key={p.slice(0, 40)} className="text-muted">
               {p}
             </p>
           ))}
@@ -182,7 +182,7 @@ export default async function ServicePage({
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
             <div className="label-upper text-brun text-[9px] mb-3">Comment ça se passe</div>
-            <h2 className="text-noir-bois text-3xl">Notre processus</h2>
+            <h2 className="text-noir-bois">Notre processus</h2>
             <div className="dore-line mx-auto mt-4" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -191,7 +191,7 @@ export default async function ServicePage({
                 <div className="w-10 h-10 rounded-full bg-dore text-creme flex items-center justify-center mx-auto mb-4 label-upper text-[11px]">
                   {step.num}
                 </div>
-                <h3 className="text-noir-bois text-lg mb-2">{step.title}</h3>
+                <h3 className="text-noir-bois mb-2">{step.title}</h3>
                 <p className="text-muted text-xs leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -204,7 +204,7 @@ export default async function ServicePage({
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-8">
             <div className="label-upper text-brun text-[9px] mb-3">Photos</div>
-            <h2 className="text-noir-bois text-3xl">Nos réalisations</h2>
+            <h2 className="text-noir-bois">Nos réalisations</h2>
             <div className="dore-line mx-auto mt-4" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

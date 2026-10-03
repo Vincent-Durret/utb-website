@@ -71,21 +71,21 @@ export default function UniversSection() {
         {/* Text */}
         <div ref={textRef} className="opacity-0">
           <div className="label-upper text-brun text-[9px] mb-3">Notre savoir-faire</div>
-          <h2 className="text-noir-bois text-3xl md:text-4xl leading-tight mb-4">
+          <h2 className="text-noir-bois mb-4">
             L&apos;Univers de la<br />Terrasse bois
           </h2>
           <div className="dore-line mb-6" />
-          <p className="text-muted text-sm leading-relaxed mb-4">
+          <p className="text-muted mb-4">
             L&apos;Entreprise UTB basée sur Sophia Antipolis intervient principalement dans les
             Alpes-Maritimes (06) et le Var (83). Menton, Monaco, Nice, Cannes, Mandelieu,
             Fréjus, St Tropez… Nous nous adaptons à chaque terrain et configuration.
           </p>
-          <p className="text-muted text-sm leading-relaxed mb-4">
+          <p className="text-muted mb-4">
             La terrasse bois offre une esthétique chaleureuse, une durabilité exceptionnelle et
             une grande polyvalence d&apos;aménagement. Les bois exotiques tels que le Cumaru,
             l&apos;Itauba et l&apos;Ipé sont recommandés pour leur durabilité et leur résistance.
           </p>
-          <p className="text-muted text-sm leading-relaxed">
+          <p className="text-muted">
             UNE ÉTUDE MINUTIEUSE, UN CHANTIER LIVRÉ DANS LES RÈGLES DE L&apos;ART.
           </p>
         </div>

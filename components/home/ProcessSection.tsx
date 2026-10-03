@@ -86,7 +86,7 @@ export default function ProcessSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="label-upper text-brun text-[9px] mb-3">Comment ça se passe</div>
-          <h2 className="text-noir-bois text-3xl md:text-4xl">
+          <h2 className="text-noir-bois">
             Nous sommes présents du début<br className="hidden md:block" /> à la fin de votre projet
           </h2>
           <div className="dore-line mx-auto mt-4" />
@@ -122,8 +122,8 @@ export default function ProcessSection() {
                     aria-hidden="true"
                   />
                 </div>
-                <h3 className="text-noir-bois font-serif text-lg mb-3">{step.title}</h3>
-                <p className="text-muted text-sm leading-relaxed max-w-xs">{step.desc}</p>
+                <h3 className="text-noir-bois font-serif mb-3">{step.title}</h3>
+                <p className="text-muted max-w-xs">{step.desc}</p>
               </div>
             ))}
           </div>

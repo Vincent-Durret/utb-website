@@ -38,7 +38,7 @@ export default async function ActualitePage({ params }: { params: Promise<{ slug
             day: "numeric", month: "long", year: "numeric",
           })}
         </div>
-        <h1 className="text-noir-bois text-3xl md:text-4xl max-w-2xl mx-auto px-6">{article.title}</h1>
+        <h1 className="text-noir-bois max-w-2xl mx-auto px-6">{article.title}</h1>
         <div className="dore-line mx-auto mt-4" />
       </div>
 
@@ -56,7 +56,7 @@ export default async function ActualitePage({ params }: { params: Promise<{ slug
       )}
 
       <article className="bg-creme py-14">
-        <div className="max-w-2xl mx-auto px-6 prose prose-neutral prose-headings:font-serif prose-headings:text-noir-bois prose-p:text-muted prose-p:text-sm prose-p:leading-relaxed">
+        <div className="max-w-2xl mx-auto px-6 prose prose-neutral prose-headings:font-serif prose-headings:text-noir-bois prose-p:text-muted prose-p:text-texte">
           {article.body && (
             <PortableText
               value={article.body as Parameters<typeof PortableText>[0]["value"]}

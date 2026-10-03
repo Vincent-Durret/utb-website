@@ -113,7 +113,7 @@ export default function ServicesSection() {
           <div className="label-upper text-brun text-[9px] mb-3" aria-hidden="true">
             Ce que nous faisons
           </div>
-          <h2 className="text-noir-bois text-3xl md:text-4xl">Nos services</h2>
+          <h2 className="text-noir-bois">Nos services</h2>
           <div className="dore-line mx-auto mt-4" aria-hidden="true" />
         </div>
 
@@ -128,7 +128,7 @@ export default function ServicesSection() {
               <div key={s.href} className="service-row opacity-0" role="listitem">
                 <button
                   id={btnId}
-                  className="w-full flex items-center justify-between py-5 border-t border-beige-card group text-left"
+                  className="w-full flex items-center justify-between py-5 cursor-pointer border-t border-beige-card group text-left"
                   onClick={() => toggle(i)}
                   aria-expanded={isOpen}
                   aria-controls={descId}
@@ -141,7 +141,7 @@ export default function ServicesSection() {
                       {s.num}
                     </span>
                     <span
-                      className={`font-serif text-lg md:text-xl transition-colors duration-200 ${
+                      className={`font-serif text-titre-secondaire transition-colors duration-200 ${
                         isOpen ? "text-brun" : "text-noir-bois group-hover:text-brun"
                       }`}
                     >
@@ -172,7 +172,7 @@ export default function ServicesSection() {
                   }}
                 >
                   <div className="pl-11 pb-6 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-10">
-                    <p className="text-muted text-sm leading-relaxed">{s.desc}</p>
+                    <p className="text-muted">{s.desc}</p>
                     <Link
                       href={s.href}
                       className="flex-shrink-0 label-upper text-brun text-[9px] border-b border-brun pb-0.5 hover:text-dore hover:border-dore transition-colors self-start"

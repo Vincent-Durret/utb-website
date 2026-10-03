@@ -131,7 +131,7 @@ export default function RealisationsStrip({ realisations }: Props) {
         {/* Header */}
         <div className="text-center mb-10">
           <div className="label-upper text-dore text-[9px] mb-3" aria-hidden="true">Portfolio</div>
-          <h2 className="text-creme text-3xl md:text-4xl">Nos dernières réalisations</h2>
+          <h2 className="text-creme">Nos dernières réalisations</h2>
           <div className="dore-line mx-auto mt-4" aria-hidden="true" />
         </div>
 
@@ -163,7 +163,7 @@ export default function RealisationsStrip({ realisations }: Props) {
                   {SERVICE_LABELS[active.service] ?? active.service}
                 </div>
               )}
-              <h3 className="text-creme font-serif text-xl md:text-2xl leading-tight">
+              <h3 className="text-creme font-serif">
                 {active.title}
               </h3>
               {active.location && (

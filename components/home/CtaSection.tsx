@@ -40,9 +40,9 @@ export default function CtaSection() {
     <section ref={sectionRef} className="bg-brun py-20">
       <div ref={innerRef} className="max-w-3xl mx-auto px-6 text-center opacity-0">
         <div className="label-upper text-beige-card/60 text-[9px] mb-4">Votre projet commence ici</div>
-        <h2 className="text-creme text-3xl md:text-4xl mb-4">Demandez à être rappelé</h2>
+        <h2 className="text-creme mb-4">Demandez à être rappelé</h2>
         <div className="dore-line mx-auto mb-6" />
-        <p className="text-creme/70 text-sm leading-relaxed mb-8">
+        <p className="text-creme/70 mb-8">
           Un conseiller vous rappelle immédiatement.<br />
           Disponible du lundi au samedi de 8h00 à 19h00.<br />
           Pour les particuliers, entreprises et collectivités, nous nous engageons à vous remettre

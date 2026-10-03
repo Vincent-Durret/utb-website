@@ -92,7 +92,7 @@ export default function FaqSection() {
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <div className="label-upper text-brun text-[9px] mb-3" aria-hidden="true">Questions fréquentes</div>
-          <h2 className="text-noir-bois text-3xl md:text-4xl">FAQ</h2>
+          <h2 className="text-noir-bois">FAQ</h2>
           <div className="dore-line mx-auto mt-4" aria-hidden="true" />
         </div>
 
@@ -112,12 +112,12 @@ export default function FaqSection() {
                 <dt>
                   <button
                     id={buttonId}
-                    className="w-full flex items-center justify-between px-5 py-4 text-left"
+                    className="w-full flex items-center justify-between px-5 py-4 cursor-pointer text-left"
                     onClick={() => toggle(i)}
                     aria-expanded={isOpen}
                     aria-controls={answerId}
                   >
-                    <span className="text-noir-bois text-sm pr-4">{faq.q}</span>
+                    <span className="text-noir-bois pr-4">{faq.q}</span>
                     <span
                       aria-hidden="true"
                       className={`text-dore text-xl leading-none flex-shrink-0 transition-transform duration-300 ${
@@ -137,7 +137,7 @@ export default function FaqSection() {
                   className="overflow-hidden"
                   style={{ height: reducedMotion ? (isOpen ? "auto" : 0) : 0 }}
                 >
-                  <p className="px-5 pb-4 text-muted text-sm leading-relaxed">{faq.a}</p>
+                  <p className="px-5 pb-4 text-muted">{faq.a}</p>
                 </dd>
               </div>
             );

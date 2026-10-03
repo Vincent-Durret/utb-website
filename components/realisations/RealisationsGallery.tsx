@@ -74,6 +74,7 @@ function RealisationCard({ item, index, variant = "small", onOpen }: CardProps) 
                 ? "(max-width: 768px) 100vw, 75vw"
                 : "(max-width: 768px) 100vw, 25vw"
             }
+            loading="eager"
           />
         ) : (
           <div className="w-full h-full bg-beige" />
@@ -99,9 +100,7 @@ function RealisationCard({ item, index, variant = "small", onOpen }: CardProps) 
 
         <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
           <h2
-            className={`text-creme font-serif leading-snug ${
-              isLarge ? "text-xl md:text-2xl" : "text-base"
-            }`}
+            className="text-creme font-serif text-titre-secondaire"
           >
             {item.title}
           </h2>
@@ -225,7 +224,7 @@ export default function RealisationsGallery({ items: allItems }: Props) {
   if (allItems.length === 0) {
     return (
       <div className="text-center py-20 text-muted">
-        <p className="text-sm">Les réalisations seront bientôt disponibles.</p>
+        <p>Les réalisations seront bientôt disponibles.</p>
       </div>
     );
   }
@@ -235,8 +234,8 @@ export default function RealisationsGallery({ items: allItems }: Props) {
 
   return (
     <>
-      <div className="bg-[#7a6a4f] py-6 md:py-7">
-        <div className="max-w-4xl mx-auto px-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+      <div className="py-6 md:py-7">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           {FILTERS.map((filter) => {
             const isActive = selectedService === filter.value;
             return (
@@ -244,10 +243,10 @@ export default function RealisationsGallery({ items: allItems }: Props) {
                 key={filter.label}
                 onClick={() => selectFilter(filter.value)}
                 aria-pressed={isActive}
-                className={`text-sm md:text-base font-medium pb-1 border-b transition-colors ${
+                className={`text-sm md:text-base font-medium pb-1 cursor-pointer border-b transition-colors ${
                   isActive
                     ? "text-dore border-dore"
-                    : "text-creme/85 border-transparent hover:text-dore"
+                    : "text-brun border-transparent hover:text-dore"
                 }`}
               >
                 {filter.label}
@@ -261,7 +260,7 @@ export default function RealisationsGallery({ items: allItems }: Props) {
         <div className="max-w-7xl mx-auto px-6">
           {items.length === 0 ? (
             <div className="text-center py-20 text-muted">
-              <p className="text-sm">Aucune réalisation dans cette catégorie pour l&apos;instant.</p>
+              <p>Aucune réalisation dans cette catégorie pour l&apos;instant.</p>
             </div>
           ) : (
             <div className="flex flex-col gap-3">
@@ -358,6 +357,7 @@ export default function RealisationsGallery({ items: allItems }: Props) {
                 className="object-contain"
                 sizes="100vw"
                 priority
+                loading="eager"
               />
             )}
           </div>
@@ -399,7 +399,7 @@ export default function RealisationsGallery({ items: allItems }: Props) {
                   {SERVICE_LABELS[current.service] ?? current.service}
                 </span>
               )}
-              <h3 className="text-creme font-serif text-lg md:text-xl">{current.title}</h3>
+              <h3 className="text-creme font-serif">{current.title}</h3>
               {current.location && (
                 <p className="text-creme/60 text-xs mt-1">{current.location}</p>
               )}

@@ -17,7 +17,7 @@ export default async function ActualitesPage() {
     <>
       <div className="bg-beige pt-28 pb-14 text-center">
         <div className="label-upper text-brun text-[9px] mb-3">Blog</div>
-        <h1 className="text-noir-bois text-4xl md:text-5xl">Actualités bois</h1>
+        <h1 className="text-noir-bois">Actualités bois</h1>
         <div className="dore-line mx-auto mt-4" />
       </div>
 
@@ -25,7 +25,7 @@ export default async function ActualitesPage() {
         <div className="max-w-5xl mx-auto px-6">
           {actualites.length === 0 ? (
             <div className="text-center py-20 text-muted">
-              <p className="text-sm">Aucune actualité pour le moment.</p>
+              <p>Aucune actualité pour le moment.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -49,10 +49,10 @@ export default async function ActualitesPage() {
                           day: "numeric", month: "long", year: "numeric",
                         })}
                       </div>
-                      <h2 className="text-noir-bois font-serif text-lg mb-2 group-hover:text-brun transition-colors">
+                      <h2 className="text-noir-bois font-serif text-titre-secondaire mb-2 group-hover:text-brun transition-colors">
                         {a.title}
                       </h2>
-                      <p className="text-muted text-sm leading-relaxed line-clamp-3">{a.excerpt}</p>
+                      <p className="text-muted line-clamp-3">{a.excerpt}</p>
                       <div className="mt-4 text-brun label-upper text-[9px]">Lire la suite →</div>
                     </div>
                   </article>

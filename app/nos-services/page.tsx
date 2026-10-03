@@ -48,9 +48,9 @@ export default function NosServicesPage() {
       {/* Header */}
       <div className="bg-beige pt-28 pb-14 text-center">
         <div className="label-upper text-brun text-[9px] mb-3">Ce que nous faisons</div>
-        <h1 className="text-noir-bois text-4xl md:text-5xl">Nos services</h1>
+        <h1 className="text-noir-bois">Nos services</h1>
         <div className="dore-line mx-auto mt-4 mb-6" />
-        <p className="text-muted text-sm max-w-xl mx-auto px-6">
+        <p className="text-muted max-w-xl mx-auto px-6">
           Terrasses, pergolas, aménagements extérieurs — chaque projet sur mesure en Côte d&apos;Azur.
         </p>
       </div>
@@ -76,7 +76,7 @@ export default function NosServicesPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h2 className="text-creme text-lg">{card.title}</h2>
+                  <h2 className="text-creme text-titre-secondaire">{card.title}</h2>
                   <span className="label-upper text-dore text-[9px]">Découvrir →</span>
                 </div>
               </Link>

@@ -17,6 +17,21 @@
   --font-sans: var(--font-inter);
 }
 
+/* Tailles de police — modifier ici pour tout le site */
+@theme {
+  --text-texte: 1.1rem;
+  --text-texte--line-height: 1.625;
+
+  --text-titre-page: clamp(2.25rem, 1.6rem + 1.8vw, 3rem);
+  --text-titre-page--line-height: 1.15;
+
+  --text-titre: clamp(1.875rem, 1.55rem + 1vw, 2.25rem);
+  --text-titre--line-height: 1.2;
+
+  --text-titre-secondaire: 1.125rem;
+  --text-titre-secondaire--line-height: 1.4;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -26,11 +41,32 @@
     background-color: #f5f0ea;
     color: #2c2c2c;
     font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: var(--text-texte);
     -webkit-font-smoothing: antialiased;
+  }
+
+  main p {
+    line-height: var(--text-texte--line-height);
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  main h1 {
+    font-size: var(--text-titre-page);
+    line-height: var(--text-titre-page--line-height);
+  }
+
+  main h2 {
+    font-size: var(--text-titre);
+    line-height: var(--text-titre--line-height);
+  }
+
+  main h3,
+  main h4 {
+    font-size: var(--text-titre-secondaire);
+    line-height: var(--text-titre-secondaire--line-height);
   }
 
   /* Focus visible — anneau doré sur tous les éléments interactifs */

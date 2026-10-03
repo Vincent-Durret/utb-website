@@ -28,10 +28,10 @@ export default async function RealisationsPage() {
   return (
     <>
       <div className="bg-beige pt-28 pb-14 text-center">
-        <div className="label-upper text-brun text-[9px] mb-3">Portfolio</div>
-        <h1 className="text-noir-bois text-4xl md:text-5xl">Votre intérieur au grand air</h1>
+        <div className="label-upper text-brun text-[9px] mb-3">Nos réalisations</div>
+        <h1 className="text-noir-bois">Votre intérieur au grand air</h1>
         <div className="dore-line mx-auto mt-4" />
-        <p className="text-muted text-sm mt-4 max-w-md mx-auto">
+        <p className="text-muted mt-4 max-w-md mx-auto">
           Chaque projet est unique. Découvrez nos réalisations en Alpes-Maritimes et dans le Var.
         </p>
       </div>

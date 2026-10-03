@@ -10,7 +10,7 @@ export default function MentionsLegalesPage() {
   return (
     <div className="bg-creme min-h-screen pt-28 pb-20">
       <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-noir-bois text-3xl mb-2">Mentions légales</h1>
+        <h1 className="text-noir-bois mb-2">Mentions légales</h1>
         <div className="dore-line mb-10" />
         <div className="prose prose-sm prose-neutral max-w-none text-muted">
           <h2 className="mb-4">Éditeur du site</h2>

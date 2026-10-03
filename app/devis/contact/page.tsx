@@ -10,9 +10,9 @@ export default function DevisContactPage() {
     <>
       <div className="bg-beige pt-28 pb-14 text-center">
         <div className="label-upper text-brun text-[9px] mb-3" aria-hidden="true">Gratuit & sans engagement</div>
-        <h1 className="text-noir-bois text-4xl md:text-5xl">Demandez votre devis</h1>
+        <h1 className="text-noir-bois">Demandez votre devis</h1>
         <div className="dore-line mx-auto mt-4" aria-hidden="true" />
-        <p className="text-muted text-sm mt-4">Étude personnalisée remise en 72h.</p>
+        <p className="text-muted mt-4">Étude personnalisée remise en 72h.</p>
       </div>
 
       <section className="bg-creme py-16" aria-labelledby="form-title">
@@ -36,7 +36,7 @@ export default function DevisContactPage() {
                   type="text"
                   required
                   autoComplete="given-name"
-                  className="w-full border border-beige-card bg-white px-4 py-3 text-sm text-noir-bois focus:outline-none focus:border-dore transition-colors"
+                  className="w-full border border-beige-card bg-white px-4 py-3 text-noir-bois focus:outline-none focus:border-dore transition-colors"
                   placeholder="Jean"
                 />
               </div>
@@ -51,7 +51,7 @@ export default function DevisContactPage() {
                   type="text"
                   required
                   autoComplete="family-name"
-                  className="w-full border border-beige-card bg-white px-4 py-3 text-sm text-noir-bois focus:outline-none focus:border-dore transition-colors"
+                  className="w-full border border-beige-card bg-white px-4 py-3 text-noir-bois focus:outline-none focus:border-dore transition-colors"
                   placeholder="Dupont"
                 />
               </div>
@@ -68,7 +68,7 @@ export default function DevisContactPage() {
                 type="tel"
                 required
                 autoComplete="tel"
-                className="w-full border border-beige-card bg-white px-4 py-3 text-sm text-noir-bois focus:outline-none focus:border-dore transition-colors"
+                className="w-full border border-beige-card bg-white px-4 py-3 text-noir-bois focus:outline-none focus:border-dore transition-colors"
                 placeholder="06 XX XX XX XX"
               />
             </div>
@@ -82,7 +82,7 @@ export default function DevisContactPage() {
                 name="email"
                 type="email"
                 autoComplete="email"
-                className="w-full border border-beige-card bg-white px-4 py-3 text-sm text-noir-bois focus:outline-none focus:border-dore transition-colors"
+                className="w-full border border-beige-card bg-white px-4 py-3 text-noir-bois focus:outline-none focus:border-dore transition-colors"
                 placeholder="jean@exemple.fr"
               />
             </div>
@@ -98,7 +98,7 @@ export default function DevisContactPage() {
                 type="text"
                 required
                 autoComplete="address-level2"
-                className="w-full border border-beige-card bg-white px-4 py-3 text-sm text-noir-bois focus:outline-none focus:border-dore transition-colors"
+                className="w-full border border-beige-card bg-white px-4 py-3 text-noir-bois focus:outline-none focus:border-dore transition-colors"
                 placeholder="Nice, Cannes, Antibes…"
               />
             </div>
@@ -110,7 +110,7 @@ export default function DevisContactPage() {
               <select
                 id="projet"
                 name="projet"
-                className="w-full border border-beige-card bg-white px-4 py-3 text-sm text-noir-bois focus:outline-none focus:border-dore transition-colors"
+                className="w-full border border-beige-card bg-white px-4 py-3 text-noir-bois focus:outline-none focus:border-dore transition-colors"
               >
                 <option value="">Sélectionnez…</option>
                 <option value="terrasse-bois">Terrasse en bois</option>
@@ -131,7 +131,7 @@ export default function DevisContactPage() {
                 id="message"
                 name="message"
                 rows={5}
-                className="w-full border border-beige-card bg-white px-4 py-3 text-sm text-noir-bois focus:outline-none focus:border-dore transition-colors resize-none"
+                className="w-full border border-beige-card bg-white px-4 py-3 text-noir-bois focus:outline-none focus:border-dore transition-colors resize-none"
                 placeholder="Décrivez votre projet, la surface souhaitée, les contraintes de terrain…"
               />
             </div>

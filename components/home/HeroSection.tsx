@@ -95,14 +95,14 @@ export default function HeroSection() {
           </span>
         </div>
 
-        <h1 ref={titleRef} className="text-creme text-4xl md:text-5xl lg:text-6xl leading-tight mb-5">
+        <h1 ref={titleRef} className="text-creme mb-5">
           Spécialiste terrasses<br />
           <em className="not-italic text-beige-card">bois sur pilotis</em>
         </h1>
 
         <div ref={lineRef} className="dore-line mx-auto mb-6" />
 
-        <p ref={subtitleRef} className="opacity-0 text-beige text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto">
+        <p ref={subtitleRef} className="opacity-0 text-beige mb-8 max-w-md mx-auto">
           Vous souhaitez une terrasse de qualité, raffinée, élégante et durable ?
           Faites appel à nous. Votre Satisfaction est notre Satisfaction.
         </p>
